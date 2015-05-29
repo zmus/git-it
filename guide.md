@@ -36,15 +36,20 @@ git status
 git add <file>
   = add file to the snapshot for the next commit
 
-git commit -m "<commit message>"
+git commit [ -m "<commit message>" ]
   = commit (aka save) changes to repo's history
 
 snapshot 
   = state of project at a given point in time
 
-to stage
-  = to create a snapshot
+staging
+  = creating a snapshot 
 
 commit
+  = 
+
+
+To keep a project small and efficient, you should only track source files and 
+omit anything that can be generated from those files.
 
 
