@@ -33,17 +33,19 @@ git status
 git status
   = check repo for changes
 
-git add <file>
-  = add file to the snapshot for the next commit
+git diff
+  = view changes to files since last commit
+
+
+git add <filename>
+  = add file to the snapshot 
 
 git add .
   = add all files
 
-git commit [ -m "<commit message>" ]
+git commit  -m "<commit message>" 
   = commit (aka save) changes to repo's history
 
-git diff
-  = view changes to files since last commit
 
 snapshot 
   = state of project at a given point in time
@@ -52,10 +54,15 @@ staging
   = creating a snapshot 
 
 commit
-  = 
-
+  = record the staged snapshot, with a descriptive message
 
 To keep a project small and efficient, you should only track source files and 
 omit anything that can be generated from those files.
 
+Committed snapshots can be seen as “safe” versions of the project. 
+Git will never change them. 
+
+--------------------------------------------------------------------------------
+## Commit
+--------------------------------------------------------------------------------
 
