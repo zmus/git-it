@@ -36,8 +36,14 @@ git status
 git add <file>
   = add file to the snapshot for the next commit
 
+git add .
+  = add all files
+
 git commit [ -m "<commit message>" ]
   = commit (aka save) changes to repo's history
+
+git diff
+  = view changes to files since last commit
 
 snapshot 
   = state of project at a given point in time
