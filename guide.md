@@ -10,9 +10,9 @@ create a repository -> stage snapshot -> commit snapshot
 
 git --version
 
-git config --global user.name "<Your Name>"
-
-git config --global user.email "<email>"
+git config user.name "<Your Name>"
+git config global user.email <email>
+  + --global = for all repositories
 
 --------------------------------------------------------------------------------
 ## Repository
@@ -31,14 +31,22 @@ git status
 --------------------------------------------------------------------------------
 
 git status
-  = check repo for changes
+  = view untracked and modified files + staged snapshot
 
 git diff
-  = view changes to files since last commit
+  = view changes since last commit
+
+git log
+  = commit history
+    * commit: 'SHA-1 checksum of commit contents' => unique ID for a commit
+  + --oneline 
+    = condense output to a single line
+  + <filename> 
+    = only <filename> history
 
 
-git add <filename>
-  = add file to the snapshot 
+git add <filenames>
+  = add files to the snapshot 
 
 git add .
   = add all files
