@@ -1,12 +1,15 @@
 --------------------------------------------------------------------------------
-## Workflows
-
+### Workflows
+--------------------------------------------------------------------------------
+```
 create a repository  >  stage snapshot  >  commit snapshot
-
+```
+```
 LOCAL version 
   >>> PUSH changes >>> 
   <<< PULL changes <<< 
 REMOTE version (on GitHub server)
+```
 --------------------------------------------------------------------------------
 ## Configure Git
 
