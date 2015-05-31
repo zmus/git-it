@@ -1,4 +1,3 @@
---------------------------------------------------------------------------------
 ## Workflows
 ```
 create a repository  >  stage snapshot  >  commit snapshot
@@ -10,7 +9,7 @@ LOCAL version
 REMOTE version (on GitHub server)
 ```
 
---------------------------------------------------------------------------------
+
 ## Configure Git
 ```
 git --version
@@ -22,7 +21,7 @@ git config user.email <email>
   * will be recorded in commits
   * `--global` for all repositories
   
---------------------------------------------------------------------------------
+
 ## Repository
 
 * project folder (working directory)
@@ -32,7 +31,7 @@ git init
 ```
   * make folder a repository
   
---------------------------------------------------------------------------------
+
 ## Commit
 
 ```
@@ -62,7 +61,7 @@ git commit  -m "<message>"
 ```
   * commit staged snapshot
 
-
+--------------------------------------------------------------------------------
 **snapshot**
   * state of project at a given point in time
 
@@ -78,7 +77,7 @@ omit anything that can be generated from those files.
 Committed snapshots can be seen as “safe” versions of the project. 
 Git will never change them. 
 
---------------------------------------------------------------------------------
+
 ## GitHub
 ```
 git config --global user.username <userName>
