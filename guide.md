@@ -19,13 +19,14 @@ git --version
 git config user.name "<fullName>"
 git config user.email <email>
 ```
-  * `--global` = for all repositories
-  * to be recorded in any newly created commits
+  * will be recorded in commits
+  * `--global` for all repositories
   
 --------------------------------------------------------------------------------
 ## Repository
 
-**repository** a project folder (working directory).
+* project folder (working directory)
+ 
 ````
 git init
 ```
@@ -45,9 +46,9 @@ git diff
 ```
 git log  
 ```
-  * commit history
-    * `--oneline` = condense output to a single line
-    * `<filename>` = only <filename> history
+  * view commit history
+    * `--oneline` condense output to a single line
+    * `<filename>` only for this file
 
 "commit: SHA-1 checksum of commit contents" => unique ID for a commit  
 
