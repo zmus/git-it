@@ -18,7 +18,7 @@ git --version
 git config user.name "<fullName>"
 git config user.email <email>
 ```
-  * will be recorded in commits
+  * used in commits (everyone will see it)
   * `--global` for all repositories
   
 
