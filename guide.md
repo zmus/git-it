@@ -24,12 +24,12 @@ git config user.email <email>
 
 ## Repository
 
-* project folder (working directory)
+= project folder (working directory)
  
 ````
 git init
 ```
-  * make folder a repository
+  = make folder a repository
   
 
 ## Commit
@@ -37,39 +37,36 @@ git init
 ```
 git status
 ```
-  * view  modified / staged / untracked  files 
+  = view  modified / staged / untracked  files 
 ```
 git diff
 ```
-  * view changes since last commit
+  = view changes since last commit
 ```
 git log  
 ```
-  * view commit history
-    * `--oneline` condense output to a single line
-    * `<filename>` only for this file
+= view commit history
+  * `--oneline` condense output to a single line
+  * `<filename>` only for this file
 
 "commit: SHA-1 checksum of commit contents" => unique ID for a commit  
 
 ```
 git add <filenames>
 ```
-  * stage files for the next commit
-    * `.` stage all files
+  = stage files for the next commit
+  * `.` stage all files
 ```
 git commit  -m "<message>"
 ```
-  * commit staged snapshot
+  = commit staged snapshot
 
 --------------------------------------------------------------------------------
-**snapshot**
-  * state of project at a given point in time
+**snapshot** = state of project at a given point in time
 
-**staging**
-  * creating a snapshot 
+**staging** = creating a snapshot 
 
-**commit**
-  * save staged snapshot, with a descriptive message
+**commit** = save staged snapshot, with a descriptive message
 
 To keep project small and efficient, you should only track source files and 
 omit anything that can be generated from those files.
@@ -82,5 +79,5 @@ Git will never change them.
 ```
 git config --global user.username <userName>
 ```
-  * GitHub username
-    * case sensitive
+  = GitHub username
+  * case sensitive
