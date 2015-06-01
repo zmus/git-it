@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-create a repository  >  stage snapshot  >  commit snapshot
+  create a repository  >  stage snapshot  >  commit snapshot
 --------------------------------------------------------------------------------
 
   snapshot = state of project at a given point in time
@@ -16,8 +16,8 @@ create a repository  >  stage snapshot  >  commit snapshot
   Git will never change them. 
 
 --------------------------------------------------------------------------------
-LOCAL version   >>> PUSH changes >>>   REMOTE version (on GitHub server) 
-                <<< PULL changes <<< 
+  LOCAL version   >>> PUSH changes >>>   REMOTE version (on GitHub server) 
+                  <<< PULL changes <<< 
 --------------------------------------------------------------------------------
 
   Sometimes CONTRIBUTING.md is used besides README.md
@@ -26,13 +26,13 @@ LOCAL version   >>> PUSH changes >>>   REMOTE version (on GitHub server)
              * e.g. files with passwords
 
 --------------------------------------------------------------------------------
-FORK a repo  >  CLONE it from GitHub  >  connect original (upstream)
+  FORK a repo  >  CLONE it from GitHub  >  connect original (upstream)
 --------------------------------------------------------------------------------
 
   Make sure you aren't cloning inside of another Git repository !
 
 --------------------------------------------------------------------------------
-Configure Git
+  Configure Git
 --------------------------------------------------------------------------------
 
   git --version
@@ -43,7 +43,7 @@ Configure Git
     + --global = for all repositories
   
 --------------------------------------------------------------------------------
-Repository
+  Repository
 --------------------------------------------------------------------------------
 
   = project folder (working directory)
@@ -52,7 +52,7 @@ Repository
     = make folder a repository
   
 --------------------------------------------------------------------------------
-Commit
+  Commit
 --------------------------------------------------------------------------------
 
   git status
@@ -74,7 +74,7 @@ Commit
     = commit staged snapshot
 
 --------------------------------------------------------------------------------
-GitHub
+  GitHub
 --------------------------------------------------------------------------------
 
   git config --global user.username <userName>
@@ -82,7 +82,7 @@ GitHub
     * case sensitive
 
 --------------------------------------------------------------------------------
-Remote 
+  Remote 
 --------------------------------------------------------------------------------
 
   git remote add <remoteName> <URL>
@@ -110,7 +110,7 @@ Remote
                  * http://username.github.io/repository
 
 --------------------------------------------------------------------------------
-Forks
+  Forks
 --------------------------------------------------------------------------------
 
   = copies of repositories on GitHub 
