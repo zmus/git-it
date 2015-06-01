@@ -29,6 +29,8 @@ LOCAL version   >>> PUSH changes >>>   REMOTE version (on GitHub server)
 FORK a repo  >  CLONE it from GitHub  >  connect original (upstream)
 --------------------------------------------------------------------------------
 
+  Make sure you aren't cloning inside of another Git repository !
+
 --------------------------------------------------------------------------------
 Configure Git
 --------------------------------------------------------------------------------

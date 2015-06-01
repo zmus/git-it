@@ -1,4 +1,7 @@
+<!-- ####################################################################### -->
+
 ## Workflows
+
 ```
 create a repository  >  stage snapshot  >  commit snapshot
 ```
@@ -23,9 +26,11 @@ REMOTE version (on GitHub server)
 
 
 ## Configure Git
+
 ```
 git --version
 ```
+
 ```
 git config user.name "<fullName>"
 git config user.email <email>
@@ -50,14 +55,16 @@ git init
 git status
 ```
   = view  modified / staged / untracked  files 
+
 ```
 git diff
 ```
   = view changes since last commit
+
 ```
 git log  
 ```
-= view commit history
+  = view commit history
   * `--oneline` condense output to a single line
   * `<filename>` only for this file
 
@@ -68,6 +75,7 @@ git add <filenames>
 ```
   = stage files for the next commit
   * `.` stage all files
+
 ```
 git commit  -m "<message>"
 ```
@@ -75,6 +83,7 @@ git commit  -m "<message>"
 
 
 ## GitHub
+
 ```
 git config --global user.username <userName>
 ```
