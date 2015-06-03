@@ -138,20 +138,3 @@ git merge <branchName>
 
 
 
-
-
-
-** collaborators ** = GitHub users with permission to make edits to others repos
-                    * GitHub => Settings => Collaborators
-
-** pull ** = pull in changes from a remote
-
-** pull request ** = ask maintainers of the original repo to pull the changes 
-                     you've made in a forked repo
-
-contributing:
-fork
-clone
-create branch
-push to GitHub
-pull request
