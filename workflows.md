@@ -87,5 +87,7 @@ multi-character:
 
 #### Sources:
 http://rypress.com/tutorials/git/
+
 https://guides.github.com/
+
 http://jlord.us/git-it/index.html
