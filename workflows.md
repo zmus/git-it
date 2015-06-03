@@ -82,3 +82,10 @@ one character:
 multi-character:
   * two dashes
   * --author=Parameter
+  
+
+
+#### Sources:
+http://rypress.com/tutorials/git/
+https://guides.github.com/
+http://jlord.us/git-it/index.html
