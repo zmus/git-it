@@ -99,10 +99,6 @@ conventions:
                                     Forks
 --------------------------------------------------------------------------------
 
-fork a repo  
-clone it from GitHub  
-connect original (upstream) 
-
 git clone <URL>
   = creates a local copy of remote repo + 'origin' connection to it
 
