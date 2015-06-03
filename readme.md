@@ -1,4 +1,4 @@
-Commit changes:
+####Commit changes:
 ```  
 create a repository  >  stage snapshot  >  commit snapshot
 ```
@@ -19,7 +19,7 @@ Committed snapshots can be seen as “safe” versions of the project.
 Git will never change them. 
 
 
-Push and pull commited changes:
+####Push and pull commited changes:
 ```
 LOCAL version   >>> PUSH changes >>>   REMOTE version (on GitHub server) 
                 <<< PULL changes <<< 
@@ -29,7 +29,7 @@ Sometimes CONTRIBUTING.md is used besides README.md
 **.gitignore** = list of files Git should not track (e.g. files with passwords)
 
 
-Forking:
+####Forking:
 ```
 FORK a repo  >  CLONE it from GitHub  >  connect original (upstream)
 ```
@@ -40,7 +40,7 @@ FORK a repo  >  CLONE it from GitHub  >  connect original (upstream)
 Make sure you aren't cloning inside of another Git repository !
 
 
-Working on a branch:
+####Working on a branch:
 ```
 create a BRANCH  > CHECKOUT  >  work on a branch  >  CHECK-IN
 ```
@@ -54,15 +54,13 @@ to **checkout** a branch = move onto a branch
 to **check-in** a project = commit and push changes
 
 
-
-### Collaboration
-Add collaborators:
+####Add collaborators:
 ```
 GitHub / Settings / Collaborators
 ```
 **collaborators** = GitHub users with permission to make edits to others repos
 
-Contribute:
+####Contribute:
 ```
 fork  >  clone  >  create branch  >  commit  >  push to GitHub  >  send pull request
 ```
@@ -72,7 +70,7 @@ fork  >  clone  >  create branch  >  commit  >  push to GitHub  >  send pull req
   
   
   
-### Flags
+#### Flags
 
 Linux convention. Case sensitive.
 
