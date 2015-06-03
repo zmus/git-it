@@ -70,7 +70,7 @@ fork  >  clone  >  create branch  >  commit  >  push to GitHub  >  send pull req
   
   
   
-#### Flags
+#### Flags:
 
 Linux convention. Case sensitive.
 
