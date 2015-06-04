@@ -1,0 +1,152 @@
+--------------------------------------------------------------------------------
+                                  Login
+--------------------------------------------------------------------------------
+
+npm adduser
+	= create account (with a page on npmjs.com where you can publish packages),
+		or login as an existing user
+	* credential are stored in .npmrc - only need to login once
+
+npm whoami
+	= see who you're logged in as
+
+--------------------------------------------------------------------------------
+                              Dev environment
+--------------------------------------------------------------------------------
+
+npm init --scope=<username>
+	= create or edit package.json
+
+git init
+	= set up working dir as a git project
+	* the convention is to have a single git repo for each module or project
+
+--------------------------------------------------------------------------------
+                              Install modules
+--------------------------------------------------------------------------------
+
+npm install
+	= install all dependencies
+
+npm install <modulename>
+	= install or update module
+	* dependencies are fetched from the registry, and unpacked in the 
+	  'node_modules' folder
+
+npm install <modulename> --save
+	= install module as a dependency in the package.json
+
+npm ls
+	= show dependencies for current version and are they installed
+	* errors:
+			'missing' = some dependencies are not installed
+				        * npm install
+		  'extraneous' = some installed modules are not listed as dependencies
+		               * update package.json (manually or --save)
+
+npm rm <modulename> --save  
+	= uninstall and remove from package.json
+
+--------------------------------------------------------------------------------
+                                   Tests
+--------------------------------------------------------------------------------
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+	= default is an always failing test (as a reminder)
+
+"scripts": {
+  "test": "node test.js"
+}
+	= runs 'test.js'
+
+--------------------------------------------------------------------------------
+                                 Polishing
+--------------------------------------------------------------------------------
+
+1. create README.md
+	   * npm init -> will appear as 'description' in package.json if nonexistent
+
+2. add a 'repository' field in package.json with URL to code
+
+--------------------------------------------------------------------------------
+                                  Publish
+--------------------------------------------------------------------------------
+
+npm publish 
+	= publish packages into the registry
+  * [--tag <tagname>] = default 'latest' 
+
+--------------------------------------------------------------------------------
+                                  Version
+--------------------------------------------------------------------------------
+
+SemVer
+	= standard for version numbers  ( http://semver.org )
+	* 'Semantic Version'
+	*	4.3.2 - 1
+			* 1 = prerelease
+			* 2 = Patch version. Update for every change.
+			* 3 = Minor version. Update for API additions.
+			* 4 = Major version. Update for breaking API changes.
+
+Version can be published only once!
+
+npm version [ <version> | major | minor | patch | prerelease | 
+							premajor | preminor | prepatch ]
+
+	= update package.json and commit change to git if git repository
+	* premajor = major + prerelease
+
+npm view <pkg> version
+	= view package's published version
+
+--------------------------------------------------------------------------------
+                                 Dist Tag
+--------------------------------------------------------------------------------
+
+default: 'latest' = what gets installed
+
+'latest' is the only dist-tag that CAN'T be removed!
+
+npm dist-tag add <pkg>@<version> <tag>
+	= add/point to a different version
+
+npm dist-tag rm <pkg> <tag>
+npm dist-tag ls <pkg>
+
+--------------------------------------------------------------------------------
+                                  Update
+--------------------------------------------------------------------------------
+
+npm outdated
+	= detect dependency updates
+
+npm update
+	= update all deps to the max version allowed in package.json
+
+--------------------------------------------------------------------------------
+                             Module vs Package
+--------------------------------------------------------------------------------
+
+In Node, a module is:
+	* each *.js file 
+	* Node app (package) that is installed in other app as middleware 
+		(equvivalent of library)
+
+A package is ONE or more modules packed together.
+ 
+Every Node app is a package, and should have a package.json.
+
+=> all modules are packages, but not all packages are meant to be used as 
+	 modules
+
+
+
+
+
+
+
+
+
