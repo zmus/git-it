@@ -1,0 +1,48 @@
+/* =============================================================================
+    Media Queries
+============================================================================= */
+ 
+@media screen and (max-width: 320px) {
+  nav {
+    float: none;
+    width: inherit; /* from parent */
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+/* -----------------------------------------------------------------------------
+    
+----------------------------------------------------------------------------- */
+
+/* -----   ----- */
+
+width = width of the content, without padding, borders and margins
+      = !!! width is relative to parent -> html, body { width: 100% }
+max-width = overrides width; works with float and absolute (not flexbox)
+min-width = overrides max-width;
+
+.content .big - class="big" inside class="content"
+.content.big  - lass="content big"
+
+font: font-style font-variant font-weight font-size/line-height font-family;
+
+/* -----------------------------------------------------------------------------
+    Font Shorthand 
+----------------------------------------------------------------------------- */
+
+/*  At least font-size and font-family to work */
+
+body {
+  font: italic 20px Serif; /* works */
+  font: 20px; /* fails */
+  font: 18em Fantasy; /* works */
+  font: bold small-caps; /* fails */
+}
+
+1vw = 1% of viewport width
+1vh = 1% of viewport height
+1vmin = 1vw or 1vh, whichever is smaller
+1vmax = 1vw or 1vh, whichever is larger

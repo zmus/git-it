@@ -1,0 +1,12 @@
+Servers use traditional request/response OR websockets (duplex).
+
+We can't rely on every browser to use websockets, so we have to use 
+module (library) with intelligent fallbacks.
+
+
+socket.io -> abstracts websockets with fallbacks
+
+$ npm install --save socket.io  (install and add to package.json)
+
+
+

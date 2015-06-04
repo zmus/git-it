@@ -1,0 +1,164 @@
+* {
+  outline: 1px dashed;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body, html {
+  zoom: 100%;
+  height: 100%;
+  font: 17px 'Open Sans Light', "Lucida Sans Unicode", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+  color: #555;
+  background: -webkit-linear-gradient(top, white, #fafafa);
+  -webkit-animation: fadeIn 0.5s;
+}
+
+body {
+  display: flex;
+  align-items: center;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  /* Center form on the page */
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+form * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+}
+form > div {
+  /*
+  border: 1px solid #ddd;
+  &:not(last-child) {
+    border: r(3) solid #ddd;
+  }
+  */
+}
+form input {
+  font-family: inherit;
+  letter-spacing: inherit;
+  background-color: transparent;
+  padding-left: 5em;
+}
+form .msg {
+  word-wrap: break-word;
+  display: none;
+}
+form #submit {
+  font-family: inherit;
+}
+form #submit button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* =============================================================================
+    Form - Portrait
+============================================================================= */
+form > div {
+  flex-direction: column;
+}
+form input,
+form textarea {
+  text-align: center;
+}
+
+/* =============================================================================
+    Form - Landscape
+============================================================================= */
+@media (min-aspect-ratio: 1 / 2) {
+  form > div {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  form .guide {
+    flex-direction: column;
+    align-self: stretch;
+    flex: 1;
+  }
+  form label {
+    align-self: flex-end;
+  }
+  form input,
+  form textarea {
+    text-align: left;
+  }
+}
+/* =============================================================================
+    Form - Mobile
+============================================================================= */
+@media screen and (max-width: 480px) {
+  form > div {
+    border-bottom: 0;
+    flex: r(11.5);
+  }
+  form > div:first-child {
+    border-radius: r(5) r(5) 0 0;
+  }
+  form > div:last-child {
+    border-radius: 0 0 r(5) r(5);
+  }
+  form label {
+    font-size: r(8.5);
+  }
+  form input,
+  form textarea {
+    font-size: r(9.5);
+  }
+  form button {
+    font-size: r(8);
+  }
+}
+/* =============================================================================
+    Form - Small Desktop
+============================================================================= */
+@media screen and (min-width: 480px) {
+  form {
+    width: 98%;
+  }
+  form > div {
+    padding: r(0);
+    border-radius: r(4.5);
+  }
+  form > div:first-child {
+    border-radius: r(5) r(5) 0 0;
+  }
+  form > div:last-child {
+    border-radius: 0 0 r(5) r(5);
+  }
+  form label {
+    font-size: 14px;
+  }
+  form input {
+    font-size: 16px;
+  }
+  form button {
+    font-size: 16px;
+  }
+}
+/* =============================================================================
+    Form - Big Desktop
+============================================================================= */
+@media screen and (min-width: 768px) {
+  form {
+    width: 750px;
+  }
+}

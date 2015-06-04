@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+    /* height = line-height, padding  */
+        * { margin: 0; outline: px dashed red }
+        html { 
+            height: 100%;
+            display: flex;
+            align-items: center; 
+            justify-content:center; 
+        }
+        body {
+            font: 8vmin Helvetica;
+            display: flex;
+            height: 0em;
+        }
+        div {
+            display: inline-flex;
+        }
+        .mo, .mi, .mn { margin: 0 0.02em }
+        .row {
+            align-items: center;
+            justify-content: center;
+        }
+        .up,
+        .down,
+        .\^,
+        .\_ {
+            flex: 1;
+            justify-content: center;
+        }
+        .up,
+        .\^ {
+            align-items: flex-end;
+            border-bottom: 0.05em solid;
+        }
+        .down,
+        .\_ {
+            align-items: flex-start;
+            border-top: 0.05em solid;
+        }
+        .\^, 
+        .\_ {
+            border: 0;
+        }
+        .\^:empty,
+        .\_:empty::before {
+            content: ".";
+            opacity: 0;
+        }
+        .col,
+        .msubsup {
+            margin: 0 0.1em;
+            align-self: stretch;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .msubsup {
+            margin: 0;
+            font-size: 0.7em;
+        }
+        .up .up,
+        .up .down,
+        .down .up,
+        .down .down { font-size: 0.8em }
+
+        .E:after {
+          border: 1px solid green;
+          content: "";
+          flex: 1;
+        }
+    .E:before {
+      border: 1px solid green;
+      content: "";
+      flex: 2.5;
+    }
+      .A:before { flex: 2; content: '' }
+      .A:after { flex: 2; border: 1px solid green; content: "" }
+
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var a = document.getElementsByClassName('math');
+        a[0].style.backgroundColor('red');
+      });
+
+    </script>
+</head>
+
+<body class="math">
+    <div class="col A">
+        <div class="row">
+            <div class="mi">E</div>
+        </div>
+    </div>
+        <div class="col">
+                        <div class="up">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="mi">m</div>
+                                    <div class="mi">v</div>
+                                </div>
+                            </div>
+                            <div class="col msubsup">
+                                <div class="^">
+                                <div class="row">
+                                    <div class="mn">2</div>
+                                </div>
+                                </div>
+                                <div class="_"></div>
+                            </div>
+                                <div class="col">
+                        <div class="up">
+                        <div class="row">
+                                     <div class="col">
+                                <div class="row">
+                                    <div class="mi">m</div>
+                                    <div class="mi">v</div>
+                                </div>
+                            </div>
+                            <div class="col msubsup">
+                                <div class="^">
+                                <div class="row">
+                                    <div class="mn">2</div>
+                                </div>
+                                </div>
+                                <div class="_"></div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <div class="down">
+                        <div class="row">
+                            <div class="col">
+                            <div class="row">
+                                <div class="mn">3</div>
+                            </div>
+                            </div>
+                            <div class="col">
+                                <div class="up">
+                                <div class="row">
+                                        <div class="col">
+                                        <div class="row">
+                                            <div class="mi">m</div>
+                                            <div class="mi">v</div>
+                                        </div>
+                                        </div>
+                                    <div class="col msubsup">
+                                        <div class="^">
+                                            <div class="col">
+                                                <div class="up">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="row">
+                                                            <div class="mi">m</div>
+                                                            <div class="mi">v</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col msubsup">
+                                                        <div class="^">
+                                                        <div class="row">
+                                                            <div class="mn">2</div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="_"></div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="down">
+                                                <div class="row">
+                                                    <div class="mn">2</div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="_"></div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="down">
+                                    <div class="row">
+                                        <div class="mn">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+
+
+                        <div class="down">
+                          <div class="row">
+                            <div class="col">
+                            <div class="row">
+                                <div class="mn">4</div>
+                            </div>
+                            </div>
+                                <div class="col">
+                            <div class="up">
+                            <div class="row">
+                                        <div class="col">
+                                    <div class="row">
+                                        <div class="mi">m</div>
+                                        <div class="mi">v</div>
+                                    </div>
+                                </div>
+                                <div class="col msubsup">
+                                    <div class="^">
+                                    <div class="row">
+                                        <div class="mn">2</div>
+                                    </div>
+                                    </div>
+                                    <div class="_"></div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="down">
+                            <div class="row">
+                                <div class="mn">2</div>
+                            </div>
+                            </div>
+                        </div>
+                            </div>
+                       </div>
+                    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="mo">=</div>
+        </div>    
+    </div>
+
+    <div class="col">
+        <div class="up">
+        <div class="row">
+            <div class="mi">m</div>
+            <div class="mi">v</div>
+            <div class="col msubsup">
+                <div class="^">
+                <div class="row">
+                    <div class="mn">2</div>
+                </div>
+                </div>
+                <div class="_"></div>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="down">
+          <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="mn">2</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="up">
+                <div class="row">
+                    <div class="mi">m</div>
+                    <div class="mi">v</div>
+                    <div class="col msubsup">
+                        <div class="^">
+                        <div class="row">
+                            <div class="mn">2</div>
+                        </div>
+                        </div>
+                        <div class="_"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="down">
+                <div class="row">
+                    <div class="col E">
+                        <div class="row">
+                            <div class="mn">3</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="up">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="mi">m</div>
+                                    <div class="mi">v</div>
+                                </div>
+                            </div>
+                            <div class="col msubsup">
+                                <div class="^">
+                                <div class="row">
+                                    <div class="mn">2</div>
+                                </div>
+                                </div>
+                                <div class="_"></div>
+                            </div>
+                             <div class="col">
+                                <div class="up">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="mi">m</div>
+                                            <div class="mi">v</div>
+                                        </div>
+                                    </div>
+                                    <div class="col msubsup">
+                                        <div class="^">
+                                        <div class="row">
+                                            <div class="mn D">7</div>
+
+                                        </div>
+                                        </div>
+                                        <div class="_"></div>
+                                    </div>
+                                </div>
+                                </div>
+                        <div class="down">
+                        <div class="row">
+                            <div class="mn">2</div>
+                        </div>
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                        <div class="down">
+                        <div class="row">
+                            <div class="mn">2</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>  
+</body>
+</html>

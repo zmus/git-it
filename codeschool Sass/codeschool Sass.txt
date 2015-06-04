@@ -1,0 +1,22 @@
+> SCSS and Sass (not SASS)
+
+> Two syntaxes:
+
+  > .scss - fully CSS compliant - just rename .css to .scss :-) 
+
+  > .sass - Ruby/Python like - uses indentations
+  
+
+> We should use:
+
+  > @mixin + @include 
+
+      => SIMILAR sets of properties used multiple times with small variations
+
+  > @extend 
+
+      => Sets of properties that match EXACTLY
+
+  > @function 
+
+      => Commonly-used operations to determine VALUES

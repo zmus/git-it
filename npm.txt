@@ -28,13 +28,13 @@ git init
 npm install
 	= install all dependencies
 
-npm install <modulename>
-	= install or update module
-	* dependencies are fetched from the registry, and unpacked in the 
-	  'node_modules' folder
+  + <modulenames>
+    	= install or update modules
+    	* dependencies are fetched from the registry, and unpacked in the 
+    	  'node_modules' folder
 
-npm install <modulename> --save
-	= install module as a dependency in the package.json
+  + <modulenames> --save
+	     = install modules as a dependency in the package.json
 
 npm ls
 	= show dependencies for current version and are they installed

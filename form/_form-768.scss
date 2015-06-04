@@ -1,0 +1,41 @@
+
+$a: 0.0453092vmin;
+$phi: 0.30635;
+
+@media screen and (max-width: 768px) {
+  form {
+    /* Center form on the page */
+    margin: 0 auto;
+    width: r(16);  
+    height: r(10);
+    display: flex;
+    flex-direction: column;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      border: r(0) solid #ddd;
+      border-bottom: 0;
+      padding: r(0);
+    }
+    >div:first-child {
+      border-radius: r(0) r(0) 0 0;
+    }
+    >div:last-child {
+      border-radius: 0 0 r(0) r(0);
+    }
+    label {
+      font-size: r(4.7);
+    }
+
+    input, 
+    textarea {
+      font-size: r(0.5);
+      font-family: inherit;
+      letter-spacing: inherit;
+      text-align: center;
+      background-color: transparent;
+      padding: r(0);
+    }
+  }
+}

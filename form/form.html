@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>form template</title>
+    <link rel="stylesheet" href="form.css">
+  </head>
+  <body>
+
+    <form id="" action="/" method="post" target="#response">
+      <div id="name">
+        <div class="guide">
+          <label for="n">Name</label>
+          <div class="msg">Dozvoljeni znakovi: a-Z i 0-9.<br>Prvi znak mora biti slovo.</div>
+        </div>
+        <input id="n" name="name" type="text" autofocus>
+      </div>
+
+      <div id="email">
+        <div class="guide">
+          <label for="e">Email</label>
+          <div class="msg"></div>
+        </div>
+        <input id="e" name="email" type="email">
+      </div> 
+       
+      <div id="password">
+        <div class="guide">
+          <label for="p">Password</label>
+          <div class="msg"></div>
+        </div>       
+        <input id="p" name="password" type="password"></input>
+      </div> 
+
+      <div id="submit">
+        <button type="submit">Let's dance</button>
+      </div>
+    </form>
+
+    <script>
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('keydown', function () {
+        if (this.clientWidth < this.scrollWidth) {
+          var size = this.style.fontSize;
+          console.log(size);
+          size = (size * 0.9).toString() + "vw";
+        }
+      });      
+    }
+    </script>
+  </body>
+</html>
+
+<!--
+
+action - URL where the form's data should be sent
+       - if not provided: URL of the page containing the form
+
+It's possible to specify a URL that uses the HTTPS protocol. 
+The data is encrypted along with the rest of the request, 
+even if the form itself is hosted on an insecure HTTP page.
+
+method - "get" or "post"
+
+enctype - specify "Content-Type" HTTP header
+        - default: "application/x-www-form-urlencoded"
+        - if sending files: "multipart/form-data" (method="post") 
+
+
+<input type="submit" value="Let's dance">  -> label: plain text
+<button type="submit">Let's dance</button> -> label: HTML
+
+-->
+

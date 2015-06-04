@@ -1,0 +1,124 @@
+* { outline : px solid white; margin: 0; padding: 0; border: 0 }
+
+body, html { height: 100%; }
+
+body { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: rgba(2,2,2,0.8); 
+}
+.hex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.hex>div { 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+.hex>div>div {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 26.5vmin; 
+  height: 30.5vmin;
+}
+.hex .left .up svg {
+  fill: #F1C40F;
+  fill: #1ABC9C;  
+}
+.hex .left .down svg {
+  fill: #2980B9;
+}
+.hex .center .up svg {
+  fill: #27AE60;
+}
+.hex .center .middle svg {
+  fill: #ECF0F1;
+}
+.hex .center .down svg {
+  fill: #1ABC9C;
+  fill: #9B59B6;  
+}
+
+.hex .right .up svg {
+  fill: #9B59B6;
+  fill: #F1C40F;  
+}
+.hex .right .down svg {
+  fill: #C0392B;
+}
+svg {
+  flex: 0 0 130%;
+  cursor: auto;
+  z-index: ;
+  opacity: ;
+}
+
+svg text {
+  visibility: hidden;
+  fill: blue;
+  font-family: Helvetica;
+}
+.left .up text {
+  fill: #446CB3;
+}
+.left .down text {
+  fill: #9A12B3;
+}
+.center .up text {
+  fill: #1abc9c;
+}
+.center .down text {
+  fill: #CF000F;
+}
+.right .up text {
+  fill: #26A65B;
+}
+.right .down text {
+  fill: #F9BF3B;
+}
+
+
+/*
+
+.hex .center .middle {
+  display: block;
+}
+
+.hex .center .middle svg {    
+        width: 69.9vmin;
+        position: relative;
+        top: -15vmin;
+        left: -21.7vmin;
+  z-index: 2;
+      
+
+        
+
+}
+
+*/
+
+.info {
+  position: absolute;
+  top: 5vmin;
+  left: 5vmin;
+  font: 1em Helvetica;
+  color: #ECF0F1;
+}
+
+.hex {
+      animation-name: loading;
+      animation-duration: 4s;
+      
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(300deg);
+  }
+}

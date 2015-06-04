@@ -1,0 +1,68 @@
+
+body {
+  background-color: #34495e;
+  color: #f1d45f;
+  font-family: Verdana;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+
+div {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  padding: 1em;
+  width: 30%;
+  border-radius: 1em;
+  border: 2px white solid;
+}
+
+form * {
+  padding: 0.3em;
+  margin: 0.3em;
+  letter-spacing: 0.1em;
+}
+
+[name] {
+    width: 85%;
+}
+
+legend {
+  width: 85%;
+  padding: 0.5em;
+  text-align: center;
+}
+
+[type] {
+  position: relative;
+  left: 4.5em;
+  border-radius: 1em;
+  text-transform: uppercase;
+  height: 2em;
+  background-color: #27ae60;
+  color: #ecf0f1;
+}
+
+ul {
+  list-style: none; 
+}
+
+a {
+  color: #f1d45f;
+  text-decoration: none;
+}
+
+img {
+  position: relative;
+  top: 0.2em;
+  right: 0.5em;
+  width: 1em;
+}
+

@@ -1,0 +1,438 @@
+/* -----------------------------------------------------------------------------
+    One line comments
+----------------------------------------------------------------------------- */
+
+// This comment won't be in the compiled CSS
+  
+/* This comment will */
+
+/* -----------------------------------------------------------------------------
+    Imports and Partials
+----------------------------------------------------------------------------- */ 
+
+//  buttons.scss || buttons.sass -> will create a separate buttons.css
+
+//  Adding an underscore creates a partial:
+
+//  _buttons.scss || _buttons.sass -> becomes part of application.css
+
+@import "buttons"; 
+
+/* -----------------------------------------------------------------------------
+    Nesting selectors
+----------------------------------------------------------------------------- */ 
+
+// Limit nesting to 3 or 4 levels - better use extra classes
+//   -> it increases specificity which is hard to override later
+
+// & references parent selector
+
+section {
+  p {}
+  .big {}
+  &.big {}
+  &:hover {}
+  .big & {}
+}
+
+section {}
+section p {}
+section .big {} 
+section.big {}  // <section class="big">
+section:hover {}
+.big section {}
+
+/* -----------------------------------------------------------------------------
+    Nesting properties
+----------------------------------------------------------------------------- */ 
+
+.p {
+  text: {
+    decoration: underline;
+    transform: uppercase;
+  }
+}
+
+.p {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+/* =============================================================================
+
+                                VARIABLES 
+
+============================================================================= */
+
+$black: #000;  // mora doć prije nego se koristi
+
+p {
+  color: $black;  // color: #000;
+}
+
+// $color-base > $color-blue  -  better reusability in other projects
+
+/* -----------------------------------------------------------------------------
+    Overwrite and Default Flag
+----------------------------------------------------------------------------- */ 
+
+$black: #000;
+$black: #fff; 
+
+p {
+  color: $black;  // color: #fff;
+}
+
+$black: #000;
+$black: #fff !default;  // korisno kod partials
+
+p {
+  color: $black;  // color: #000;
+}
+
+/* -----------------------------------------------------------------------------
+    Types
+----------------------------------------------------------------------------- */
+
+// Booleans
+$rounded: false;
+$shadow: true;
+
+// Null
+$shadow: null;
+
+// Strings - can be set with or without quotes
+$h1: "Arial";
+$h1: Arial;
+
+// Lists
+$authors: matej, marko, luka, ivan;
+$margin: 1em 0 1em 2em;
+
+// Numbers
+$rounded: 1em;
+$line-height: 1.5;
+
+// Colors
+
+/* -----------------------------------------------------------------------------
+    Scope
+----------------------------------------------------------------------------- */
+
+$color1: fff;  // global
+
+p {
+  $color1: #000;   // changes global variable 
+  $color2: #000;   // not usable outside this block
+}
+h1 {
+  color: $color1;  // #000
+  color: $color2;  // error
+}
+
+/* -----------------------------------------------------------------------------
+    Variable Interpolation
+----------------------------------------------------------------------------- */
+
+// #{ $variable } 
+ 
+// selectors, property names and strings
+
+$side: top;
+
+.nav-#{$side} {
+  position: relative;
+  #{$side}: 1em;
+}
+
+.nav-#{$side) {
+  position: relative;
+  top: 1em;
+}
+
+/* =============================================================================
+
+                                  MIXINS
+
+============================================================================= */
+
+// Block of reusable code that takes optional arguments (like functions)
+
+@mixin font {
+  font: 1em Arial;
+}
+
+@mixin button($radius, $color) {  
+  border-radius: $radius;
+  color: $color;  
+}
+
+.btn {
+  @include font;
+  @include button(4px, #fff);
+}
+
+/* -----------------------------------------------------------------------------
+    Optional arguments and Default values
+----------------------------------------------------------------------------- */
+
+@mixin button($radius, $color: #000) {...}  // #000 - default for 2nd arugment  
+
+.btn {
+  @include button(4px);  // color: #000;
+}
+
+// Optional arguments come last!
+
+@mixin button($color: #000, $radius) {...}
+@include button(4px);   // error
+
+/* -----------------------------------------------------------------------------
+    Keyword Arguments 
+----------------------------------------------------------------------------- */
+
+@mixin button($color, $radius) {...}
+
+// Poredak argumenata nije bitan! Dobro za razumijavanje...
+
+@include button($radius: 4px, $color: #000);
+
+/* -----------------------------------------------------------------------------
+    Variable Arguments
+----------------------------------------------------------------------------- */
+
+// For paassing comma separated values...
+
+@mixin transition($val...) {  // adding ... creates 'variable argument'
+  transition: $val;
+}
+
+.btn {
+  @include transition(color 1s ease-in, background  1s ease-out);
+}
+
+/* -----------------------------------------------------------------------------
+    Content
+----------------------------------------------------------------------------- */
+
+// @content = pass a block of properties to mixin
+
+@mixin button {
+  @content;
+}
+
+.btn {
+  @include button {
+    color: #fff;
+  }
+}
+
+.btn { color: #fff }
+
+
+/* =============================================================================
+
+                              EXTEND directive            
+
+============================================================================= */
+
+.btn-a { background: #fff; }
+.btn-b {
+  @extend .btn-a; 
+  font-size: 1em;
+}
+
+.btn-a, .btn-b { background: #fff }
+.btn-b { font-size: 1em }
+
+/* -----------------------------------------------------------------------------
+    Nesting + Extend
+----------------------------------------------------------------------------- */
+
+.p1 { h1 {} }
+.p2 { @extend .p1; }
+
+// CSS
+.p1 h1 {}
+.p2 h1 {}
+
+// But how can we modify only .p1?
+
+/* -----------------------------------------------------------------------------
+    Placeholder Selectors - SUPER KORISNO :)
+----------------------------------------------------------------------------- */
+
+// Can be extended, but never become a selector of their own
+
+%p {
+  background: #fff;
+  font: 1em Arial;
+}
+
+.p1 { @extend %p; }
+.p2 { @extend %p; }
+
+.sidebar .p1 { text-transform: lowercase; }  // .p2 is no longer scoped
+
+/* =============================================================================
+
+                                 DIRECTIVES                                
+
+============================================================================= */
+
+/* -----------------------------------------------------------------------------
+    Functions
+----------------------------------------------------------------------------- */
+
+// unlike mixin, parentheses are needed if no arguments
+// arguments = same rules as mixin
+
+@function fluidize($target, $context) { 
+  @return ($target / $context) * 100%;
+}
+
+.sidebar { width: fluidize(350px, 1000px); }
+
+// CSS
+.sidebar { width: 35%; }  
+
+/* -----------------------------------------------------------------------------
+    If
+----------------------------------------------------------------------------- */
+
+$theme: dark;
+
+body {
+  @if $theme == dark { 
+    background: #000;
+  } @else if $theme == pink {
+    background: pink; 
+  } @else {
+    background: #fff;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+    Each
+----------------------------------------------------------------------------- */
+
+// loop through each list item
+
+$authors: matej marko luka ivan;
+
+@each $author in $authors {  
+  .author-#($author) {
+    background: url(author-#($author).jpg);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+    For & While
+----------------------------------------------------------------------------- */
+
+// level of control: @each < @for < @while
+
+.item {
+  position: absolute;
+  right: 0;
+
+  @for $i from 1 through 3 {
+    $.item-#{$i} {
+      top: $i * 30px;
+    }
+  }
+}
+
+// @while reqires manually updating the index 
+
+// for example, @while can target even or odd values
+
+$i: 1;
+
+.item {
+  position: absolute;
+  right: 0;
+
+  @while $i < 4 {
+    $.item-#{$i} {
+      top: $i * 30px;
+    }
+    $i: $i + 1;
+  }
+}
+
+// CSS 
+.item { position: absolute; right: 0 }
+.item.item-1 { top: 30px; }
+.item.item-2 { top: 60px; } 
+.item.item-3 { top: 90px; }
+
+/* =============================================================================
+
+                                MATH + COLOR                              
+
+============================================================================= */
+
+// Sass defaults to return (up to) 5 decimals
+
+/* -----------------------------------------------------------------------------
+    Triggering Division
+----------------------------------------------------------------------------- */
+
+font:  2em / 1.5  Helvetica;  
+font: (2em / 1.5) Helvetica;
+
+// Variable involved            ->  $size / 10
+// Parenthesis                  ->  ( 100px / 20 )
+// Another arithmetic operation ->  20px * 5 / 2
+
+/* -----------------------------------------------------------------------------
+    String Addition
+----------------------------------------------------------------------------- */
+
+/* =============================================================================
+
+                                RESPONSIVE                       
+
+============================================================================= */
+
+// Easier fluid calculation and media query handling
+
+/* -----------------------------------------------------------------------------
+    Media Queries
+----------------------------------------------------------------------------- */
+
+div {
+  width: 30%;
+  @media (min-width: 768px) {
+    float: right;
+  }
+}
+
+// ili 
+
+@mixin respond-to($media) {  // 'respond-to' is conventional name
+  @if $media == desktop {
+    @media (min-width: 960px) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+div {
+  width: 30%;
+  @include respond-to(tablet) {
+    float: right;
+  }
+}
+
+// CSS
+div { width 30%; }
+@media (min-width: 768px) {
+  div { float: right; }
+}
+

@@ -1,0 +1,54 @@
+<!-- 
+	In our client below, listen for 'question' events from the server and call the insertQuestion function whenever the event fires.
+-->
+
+<html>
+<head>
+	<title>questions answered</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+<form name="chat_form">
+<input type="text" name="chat_input">
+<input type="submit" value="Submit">
+</form>
+
+<script>
+ 	var server = io.connect('http://localhost:8080');
+
+ 	server.on('question', function(question) {
+		insertQuestion(question);
+  	});      
+
+  	server.on('answer', function(question, answer) {
+  		answerQuestion(question, answer);
+  	});     
+</script>
+
+<script>
+	
+</script>
+
+<script>
+	var insertQuestion = function(question) {
+		var newQuestion = document.createElement('li');
+		newQuestion.innerHTML = question;
+
+		var questions = document.getElementsByTagName('ul')[0];
+		return questions.appendChild(newQuestion);
+	}
+
+	var answerQuestion = function(question, answer) {
+		var newAnswer = document.createElement('li');
+		newAnswer.innerHTML = answer;
+
+		var answers = document.getElementsByTagName('ul')[0];
+		return answers.appendChild(newAnswer);
+	}
+</script>
+</body>
+</html>
+
+

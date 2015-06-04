@@ -1,0 +1,114 @@
+
+<!--
+  'src' loads content in an element: <script></script>, <img>
+  'href' referal link to content: <a></a>, <link>
+-->
+
+<!doctype html>
+<html lang="hr">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+
+<title>
+
+<meta name="description" content="">
+<meta name="keywords"    content="">
+
+<link rel="dns-prefetch" href="">
+
+<!-- 
+SEO if same page is accesed from different URLs. (ex. desktop and mobile websites with separate URLs)
+Redirect 301 is even better. 
+-->
+<link rel="canonical" url="">
+
+<!--
+http://xiconeditor.com/  
+http://realfavicongenerator.net/ 
+-> if not imported with <link> most browsers use /favicon.ico
+-> favicon can be changed with JS or animated GIF (chrome / firefox)
+-->
+<link rel="shortcut icon" href="favicon.ico">  <!-- older browsers and default -->
+<link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="" href="apple-touch-icon-180x180.png">  <!-- -precomposed =  iOS will not add a 3D brilliance effect -->
+
+<!-- Open Graph required--> 
+<!-- 
+music.song            video.movie      article
+music.album           video.episode    book    
+music.playlist        video.tv_show    profile
+music.radio_station   video.other      website
+--> 
+<!-- 
+image, video    :secure_url :type :width :height 
+audio           :secure_url :type  
+-->
+<meta property="og:type"  content="website">
+<meta property="og:title" content="">
+<meta property="og:image" content="">        
+<meta property="og:url"   content="">
+<!-- Open Graph optional --> 
+<meta property="og:description"      content="">
+<meta property="og:site-name"        content="">
+<meta property="og:locale"           content="en_US">  <!-- default -->
+<meta property="og:locale-alternate" content="">
+<meta property="og:audio"            content=""> 
+<meta property="og:video"            content="">
+
+<!-- Twitter Card -->
+<!-- 
+summary               photo     app      product
+summary_large_image   gallery   player
+-->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:site"        content="">
+<meta name="twitter:title"       content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image"       content="">
+<meta name="twitter:url"         content="">
+
+<!-- Fonts -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="main.css">
+
+<!-- 
+  html5shiv.js - enable styling of HTML5 elements in IE < 9  
+  Respond.js   - min/max-width CSS3 media queries for IE 6-8 
+-->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+</script>
+
+</body>
+
+</html>

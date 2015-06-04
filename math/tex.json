@@ -1,0 +1,103 @@
+[
+{
+  "class": "var",
+  "name": "velocity",
+  "symbol": "v",
+  "quantity": "vector", 
+  "definition": {
+    "fraction": [
+      {
+        "var": "displacement" 
+      },
+      {
+        "var": "time"
+      }
+    ]
+  },
+  "unit": [
+    {
+      "multiplication": [
+        {
+          "exponentiation": [
+            {
+              "unit": "metre"
+            },
+            {
+              "const": 1
+            }
+          ]      
+        },
+        {
+          "exponentiation": [
+            {
+              "unit": "second"
+            },
+            {
+              "const": -1
+            }
+          ]      
+        }
+      ]
+    }
+  
+  ],  
+  "description": {
+    "1": "Rate of change of the displacement.",
+    "2": "The difference between the final and initial position of an object."
+  }
+},
+{
+  "class": "operation",
+  "name": "division",
+  "symbol": ["/", "÷"]
+  "tex": 
+},
+{
+  "class": "unit",
+  "name": "metre",
+  "symbol": "m"
+},
+{
+  "class": "quantity",
+  "name": "length",
+  "dimension": "L",
+  "unit": "metre"
+}
+]
+
+
+
+
+
+
+
+
+
+{
+  "=": [
+    {
+      "^": [
+        {
+          "a": {
+            "value": 12
+          }
+        },
+        {
+          "b": "2"
+        }
+      ]
+    },
+    {
+      "/frac": [
+        {
+          "const": "G",
+          "type": "float",
+          "value": 6.62
+        },
+        {
+          "var": 12
+        }
+      ]
+    }
+  ]
+}

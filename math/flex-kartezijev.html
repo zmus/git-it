@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <title>flex kartezijev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <style>
+        * { 
+            outline: 1px dashed #ddd;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        html, body { height: 100% }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 1000px;
+        }
+        body>div {
+            display: flex;
+            height: 100px;
+            outline: px dashed red;
+        }
+        body>div>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            outline: px dashed green;
+        }
+        .cross {
+            flex: 1;
+            align-self: stretch;
+            outline: px dashed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cross div {
+            outline: 1px solid green;
+        }
+        .cross>div:hover {
+            background-color: green;
+        }
+        .line-left,
+        .line-right {
+            flex: 1;
+            align-self: center;
+            height: 0.5vmin;
+        }
+        .group-center {
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            width: 0.5vmin;
+        }   
+        .line-up,
+        .line-down {
+            flex: 1;
+        }
+        .center {
+            height: 0.5vmin;
+        } 
+
+        .y0 .line-left, .y0 .center, .y0 .line-right { background-color: green }
+        
+        
+
+    </style>
+    <script>
+    $(function () {
+        $('body>div>div').html('<div class="cross">' +
+                                   '<div class="line-left"></div>' +
+                                   '<div class="group-center">' +
+                                        '<div class="line-up"></div>' +
+                                        '<div class="center"></div>' +
+                                        '<div class="line-down"></div>' +
+                                    '</div>' +
+                                    '<div class="line-right"></div>' +
+                                '</div>');                               
+    });
+    </script>
+</head>
+
+<body>
+    <div class="y5">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y4">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y3">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y2">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y1">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y0">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y-1">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y-2">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y-3">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y-4">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+    <div class="y-5">
+        <div class="x-10"></div><div class="x-9"></div><div class="x-8"></div><div class="x-7"></div><div class="x-6"></div><div class="x-5"></div><div class="x-4"></div><div class="x-3"></div><div class="x-2"></div><div class="x-1"></div>
+        <div class="x0"></div>
+        <div class="x1"></div><div class="x2"></div><div class="x3"></div><div class="x4"></div><div class="x5"></div><div class="x6"></div><div class="x7"></div><div class="x8"></div><div class="x9"></div><div class="x10"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+In Elements we can change DOM, in Resources only CSS and JS (not HTML).
+
+
+console.assert() -> displays an error string (its second parameter) if its first 
+                    parameter evaluates to false.
+
+                 -  console.assert(list.length < 10, "short");
+
+/* ============================================================================= 
+    Shortcuts :)
+============================================================================= */
+
+  Ctrl + []           next / previous panel
+  Ctrl + Shift + D    change docking location
+  Ctrl + Shift + M    open device mode
+
+  Ctrl + Alt + Click on arrow    expand / collapse node and all its children
+  H                              hide element
+  
+  Ctrl + F5   refresh ignoring cache  
+  Ctrl + /    toggle comment (line or selected text)   
+  Ctrl + G    go to line
+  Ctrl + M    go to matching bracket
+  Ctrl + D    select next occurence\
+  Ctrl + L    clear console
+
+/* ============================================================================= 
+    Networking
+============================================================================= */
+
+status 304 -> file is from cache (not downloaded)
+
+How to turn off cache:
+  1) Ctrl + F5   Ctrl + Shift + R
+  2) incognito window (also disables cookies)
+  3) network/disable cache
+
+blue line 
+  = 'DOM content loaded' event 
+  - browser is done parsing HTML file, but it still could be loading resources
+
+red line
+  = 'load' event
+  - all resources are downloaded
+
+/* ============================================================================= 
+    Timeline
+============================================================================= */
+
+blue   = html
+yellow = time spent on scripting
+purple = rendering (style recalculation and layout)
+green  = painting
+transparent = idle time or uncategorized
+
+/* ============================================================================= 
+    Mobile
+============================================================================= */
+
+zoom = 100% (Ctrl + 0) -> to correctly represent width x height in px
+
+Elements -> emulate -> touch screen / geolocation / accelerometer
+
+/* ============================================================================= 
+    Optimization
+============================================================================= */
+
+PageSpeed chrome extension
+
+merge and minify JS  ( closure-compiler.appspot.com )
+
+CSS (rendering) before JS (behaviour)
+
+<script src="" async></script>
+  - async = executed while parsing page
+  - defer = executed when the page has finished parsing 
+          - kao da smo 'default' stavili na dno
+  - default = fetched and executed immediately (parsing čeka)
+
+/* ============================================================================= 
+    Memory leaks
+============================================================================= */
+
+1) Networking tab -> memory : promatramo spikeove
+
+2) Profiles -> Take heap snapshot -> interact with page -> Take 2nd snapshot
+   -> compare ( tražimo npr. 'detached DOM nodes' )
+
+
+developer.chrome.com/devtools/docs/javascript-memory-profiling
+
+  - avoid holding references to DOM elements you no longer need to use
+  - unbind unneeded event listeners 
+  - take care when storing large chunks of data you aren't going to use  

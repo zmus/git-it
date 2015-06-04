@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Codeschool Bootstrap</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <!--
+    .container 
+      - sized responsively to a fixed width, and centered within responsive margins,
+        based on the browser window size
+    .container-fluid
+      = .container without margins.
+      - stretches the entire browser window at all times
+    -->
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">Hexado</a>
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- screen readers only -->
+            <span class="sr-only">Toggle navigation</span>
+            <!-- glyphicons won't scale correctly in this case -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>        
+          </button>
+        </div>
+
+        <nav>
+          <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+            <li>
+              <!-- 
+                If user has JS disabled -> about.html
+                               enabled  -> dropdown menu and URL won't change 
+              -->
+              <a href="about.html" data-target="#" data-toggle="dropdown">
+                <!-- again, we use .caret insead of glyphicon -->
+                About <span class='caret'></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Contact Us</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Blog</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Sign up</a></li>
+          </ul>
+        </nav> 
+
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- login -->
+      <main class="row well well-lg">
+        <div class="col-xs-12  col-sm-8">
+            <h2>Crowdfunding on the fly</h2>
+            <p class="lead">Support people and their work relative to your wealth</p>
+            <button type="button" class="btn btn-lg btn-default">
+              How it works
+            </button>
+            <button type="button" class="btn btn-lg btn-primary">
+              Create an account
+            </button>          
+        </div>
+
+        <div class="hidden-xs  col-sm-4">
+          <img src="hexado.svg" alt="logo" width="100%">
+        </div> 
+      </main>
+
+      <!-- features -->
+      <div class="row text-center features">
+        <div class="col-xs-12 col-sm-4  col-md-3">
+          <span class="glyphicon glyphicon-eur"></span>
+          <h3>Micropay</h3>
+          <p>Transactions as low as 0.001$.</p>
+          <p>Fee-free!!!</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-4  col-md-4  col-md-offset-1">
+          <span class="glyphicon glyphicon-credit-card"></span>
+          <h3>Extensive credit card and bank support</h3>
+          <p>PayPal, Visa, MasterCard...</p>
+        </div>  
+
+        <div class="col-xs-12 col-sm-4  col-md-3  col-md-offset-1">      
+          <span class="glyphicon glyphicon-random"></span>
+          <h3>Multiple distribution modes</h3>
+          <p>Fixed amount distributed at the end of the month</p>
+          <p>1:1</p>
+          <p>combination...</p>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer class="row">
+        <div class="col-xs-12 col-sm-3">
+          <h4>Who We Are</h4>
+          <p>Hexado is the most advanced microdonation / micropayment web service!</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-2  col-sm-offset-1">
+          <h4>Links</h4>
+          <ul class="toggleStyle">
+            <li>Home</li>
+            <li>Sign in</li>
+            <li>Sign up</li>
+          </ul>
+        </div>
+
+        <div class="clearfix visible-xs"></div>
+
+        <div class="col-xs-12 col-sm-2">
+          <h4>Reach Out</h4>
+          <ul class="toggleStyle">
+            <li>About</li>
+            <li>Contact Us</li>
+            <li>Blog</li>
+            <li>Twitter</li>
+            <li>Facebook</li>
+          </ul>
+        </div>
+
+        <adress class="col-xs-12  col-sm-3  col-sm-offset-1">       
+          <h4>Get in Touch</h4>
+          <p>Want to get in touch with us?</p>
+          <p>
+            <span class="glyphicon glyphicon-envelope"></span> 
+            <a href="mailto:hexado@gmail.com">hexado@gmail.com</a>
+          </p>  
+        </adress>
+      </footer>
+    </div>
+
+    <!-- jQuery for Bootstrap's JS plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+    $(function () {
+      listStyle();
+      $(window).on('resize', listStyle); 
+    });
+
+    function listStyle(ul) {
+      $('.toggleStyle').each(function (index, val) {
+        if (window.innerWidth < 768) {
+          $(this).toggleClass('list-inline', true).toggleClass('list-unstyled', false);
+        } else {
+          $(this).toggleClass('list-inline', false).toggleClass('list-unstyled', true);
+        }
+      });
+    }
+    </script>
+
+  </body>
+</html>
+
+<!--                                  GRID
+
+  .row
+    = 12 columns 
+    - better html readability
+  .col-*-*
+    = number of columns 
+    - col-xs-* = min-width
+  .col-*-offset-*
+    = left padding 
+    - larger sizes inherit offset from smaller -> it needs to be overwriten
+  .hidden-*
+    = hide element
+  .visible-*
+    = only show element in * resolution
+  .clearfix
+    = clears both (new line)
+
+  xs  0px+     Phones     
+  sm  768px    Tablets
+  md  992px    Laptops
+  lg  1200px+  Desktops
+
+-->
+
+<!--
+  popular for blogs:
+    <div class='row>
+      <div class="col-md-8"></div>
+      <div class="col-md-3 col-md-offset-1"></div>
+    <div> 
+-->
+
+<!--                           TYPOGRAPHY
+
+  .lead
+    - increases size, margin... to stand out from rest of the page
+  .text-*
+    - center, justify, nowrap, left, right
+  .list-*
+    unstyled - remove bullets and margins
+    inline   - ...for horizontal lists
+  
+  Better use <span> than <i> for glyphicons (<i> has semantic meaning).
+    
+  Glyphicons are built in bootstrap.min.css with multiple URLs() to CDN. 
+
+  font-awesome.min.css -> bigger choice, but additional download
+
+-->
+
+<!--                       BUTTONS and WELLS                        
+
+  Similar to .glyphicon, we use additional classes to customize.
+
+  .well (medium)
+    - gives a simple inset effect
+  .well-lg & .well-sm
+    - add or remove some padding from the well
+
+  .btn (medium)
+    - .btn-xs .btn-sm .btn-lg
+  .btn-*
+    default - normal button
+    primary - the most important button
+    success
+    info
+    danger
+    warning
+-->
+
+<!--                           NAVIGATION
+
+  We don't use grid for nav. It is more flexible that way.
+
+  .nav
+    - class for navigations across page
+
+  .navbar
+    - class for navigation bar (usually one)
+
+  .navbar-default        -> default color scheme
+         -inverse        -> inverse color scheme
+         -brand          -> float left, increse font size; usually link to homepage
+         -static-top     -> removes round corners
+                -bottom
+         -fixed-top      -> removes round corners; fixed while scrolling 
+               -bottom
+         -nav            -> indicates that .nav is inside .navbar
+         -right          -> float right in .navbar
+         -toggle         -> navigation toggle - floats right
+         -collapse       -> hide the nav only for xs
+         -header         -> takes up the entire row for xs, but only part in sm/md/lg
+ 
+-->
+
+<!--                      JavaScript COMPONENTS
+  
+  Two ways to use JS plugins: 
+    1. data-* attributes (way easier) 
+    2. write JavaScript
+
+  .collapse
+    - hide an element in all resolutions 
+  < button data-toggle="collapse" data-target="id or class" >
+    - toggle visibility of selected element
+  <                               data-parent="id or class" >
+    - toggle visibitily of all children
+  
+  < data-toggle="dropdown" >
+    - add .open to the parent element
+  .dropdown-menu
+    - visible when inside .open 
+  .divider
+    - horizontal break to group menu items          
+
+
+  .sr-only
+    - screen readers only (hidden for visual browsers)
+  .pull-left / -right
+    - float left or right
+
+   
+ 

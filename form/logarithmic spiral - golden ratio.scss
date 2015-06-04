@@ -1,0 +1,35 @@
+// r(4) = 100,  r(0) = a = 14.5897
+// r(8) = 100,  a = 2.1286     -  1px na vmin = 46px (useless)
+// r(12) = 100, a = 0.310556   -  1px na vmin = 320px (4)
+//              a = 0.208      -  1px na vmin = 480px (3.18)
+//              a = 0.13       -  1px na vmin = 768px (2.2)
+//              a = 0.083      -  1px na vmin = 1200px (1.27)
+// r(16) = 100, a = 0.0453092  -  1px na vmin = 2200px (0.01) (superb)
+
+// logarithmic spiral: r = a * e^(b * phi)
+// Golden spiral gets wider by a factor of 1.618 for every quarter turn.
+@function r($quarterTurns) {
+  $pow: $phi * $quarterTurns * 3.14159 / 2;
+  // Taylor:
+  $exp: 1 + 
+        $pow + 
+        $pow * $pow / 2 +
+        $pow * $pow * $pow / 6 +
+        $pow * $pow * $pow * $pow / 24 +
+        $pow * $pow * $pow * $pow * $pow / 120 +
+        $pow * $pow * $pow * $pow * $pow * $pow / 720 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow / 5040 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 40320 +                 
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 362880 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 3628800 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 39916800 +               
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 479001600 +                  
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 6227020800 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 87178291200 +
+        $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow * $pow / 1307674400000;
+
+  @return $a * $exp * 1vmin;
+}
+
+$a: 0.0453092;
+$phi: 0.30635;

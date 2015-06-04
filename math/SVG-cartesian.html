@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<title>SVG cartesian</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="SVG-cartesian.js"></script>
+<style>
+
+* { outline: 1px solid red; margin: 0; }
+html, body { height: 100%; }
+
+.cartesian {
+    display: flex;
+    flex-direction: column;
+    height: 90vmin; 
+    width: 90vmin;   
+}
+.up,
+.down {
+    display: flex;
+    flex: 1;
+}
+.axis-x,
+.axis-y {
+    display: flex;
+    flex: 0.1;
+}
+.origin {
+    background-color: green;
+    flex: 0.1 1em;
+}
+.I {
+    display: flex;
+    flex: 1;
+    border: solid black;
+    border-width: 0 0 0.3em 0.3em;
+}
+.II {
+    display: flex;
+    flex: 1;
+    border: solid black;
+    border-width: 0 0.3em 0.3em 0;    
+}
+.III {
+    display: flex;
+    flex: 1;
+    border: solid black;
+    border-width: 0.3em 0.3em 0 0;    
+}
+.IV {
+    display: flex;
+    flex: 1;
+    border: solid black;
+    border-width: 0.3em 0 0 0.3em;    
+}
+.axis-x-neg,
+.axis-x-pos {
+    flex: 1;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="cartesian">
+    <div class="up">
+        <div class="left II">
+
+        </div>
+        <div class="axis-y axis-y-pos">
+
+        </div>
+        <div class="right I">
+
+        </div>
+    </div>
+    <div class="axis-x">
+        <div class="axis-x-neg">
+
+        </div>
+        <div class="origin">
+
+        </div>
+        <div class="axis-x-pos">
+
+        </div>
+    </div>
+    <div class="down">
+        <div class="left III">
+
+        </div>
+        <div class="axis-y axis-y-neg">
+
+        </div>        
+        <div class="right IV"
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

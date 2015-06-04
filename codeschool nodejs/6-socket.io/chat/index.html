@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>chat</title>
+		<link rel="stylesheet" type="text/css" href="" />
+	</head>
+
+	<body>
+
+		<form id="form" autocomplete="off">
+			<textarea id="formInput" 
+								rows="4" 
+								cols="30" 
+								maxlength="180" 
+								wrap="soft" 
+								autofocus></textarea>
+			<button>Send</button>
+		</form>
+		<div>
+			<ul id="messages"></ul>
+		</div>
+		<div>
+			<ul id="users"></ul>
+		</div>
+
+		<!-- include socket.io library -->
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+		<!-- connect to socket.io server -->
+		<script>
+			/* 
+				Using the global 'io' object that's now available to us,
+				connect to the socket.io server at 'http://localhost:8080' 
+			*/
+
+			var socket = io();
+
+			/* login / logout */
+
+			socket.on('connect', function () {
+				var nickname = prompt("What is yout nickname?");
+				socket.emit('join', nickname);
+			});
+
+			socket.on('user joined', function (nickname) {
+				var user = document.createElement('li');
+				user.innerHTML = nickname;
+				user.setAttribute('id', nickname);
+				document.getElementById('users').appendChild(user);
+			});
+
+			socket.on('user left', function (nickname) {
+				var user = document.getElementById(nickname);
+				user.parentNode.removeChild(user);
+			});
+
+			/* chat */
+
+			document.getElementById('formInput').oninput = function () {
+				socket.emit('typing');
+			};
+
+			socket.on('typing', function (nickname) {
+				document.getElementById(nickname).style.color = "green";
+			});
+		
+			document.getElementById('form').onsubmit = function () {
+				var message = document.getElementById('formInput');
+				socket.emit('new message', message.value);
+				message.value = '';
+				return false;
+			};
+
+			// insert message
+			socket.on('new message', function (data) { 
+				var newMessage = document.createElement('li');
+				newMessage.style.color = data.color;
+				newMessage.innerHTML = data.nickname + ": " + data.message;
+
+				var chat = document.getElementsByTagName('ul')[0];
+				chat.appendChild(newMessage);			
+
+				document.querySelector('li:last-child').scrollIntoView();
+			});
+		</script>
+
+	</body>
+
+</html>
+
+
+
