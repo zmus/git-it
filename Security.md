@@ -8,7 +8,7 @@ Awarness of risks + Protection = Security
 Malicious software
 --------------------------------------------------------------------------------
 
-Email **spam**
+**Email spam**
 
 **Spyware**
   * logging keystrokes 
