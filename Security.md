@@ -1,26 +1,31 @@
 ================================================================================
-                               SECURITY OVERVIEW
+Security overview
 ================================================================================
 
 Awarness of risks + Protection = Security
 
 --------------------------------------------------------------------------------
-                               Malicious software
+Malicious software
 --------------------------------------------------------------------------------
 
-Email spam
-Spyware
+Email **spam**
+
+**Spyware**
   * logging keystrokes 
   * stealing passwords or credit card numbers...
-Sending web requests
+   
+**Sending web requests**
   * click fraud 
       * to up views
   * DOS attacks ("denial of service") 
       * to keep people from being able to access websites
-Scanning for vulnerabilities on other computers
-Data crunching
+       
+**Scanning for vulnerabilities** on other computers
+
+**Data crunching**
   * crack password, mining for bitcoins...
-Backdoor for future access
+   
+**Backdoor** for future access
   * probably the most common
   * **Botnets**
       = zombie computers
@@ -30,7 +35,7 @@ Backdoor for future access
       * when breached, even if nothing is stolen, customers must get new credit cards
 
 --------------------------------------------------------------------------------
-                                    Hackers
+Hackers
 --------------------------------------------------------------------------------
 
 **White hat** 
@@ -48,7 +53,7 @@ Backdoor for future access
       * professionals - make money from hacking
 
 --------------------------------------------------------------------------------
-                                    Security
+Security
 --------------------------------------------------------------------------------
 
 **zero-day exploits**
@@ -59,8 +64,7 @@ Backdoor for future access
 Level of security is defined by the weakest link.
 Having coverage of more area at the expense of weakness in areas that matter 
 most is a bad tradeoff.
-  => Execute well the security you really need!
 
-Write software tests for common security concerns.
-
-Write a security policy (guide).
+* Execute well the security you really need!
+* Write software tests for common security concerns.
+* Write a security policy (guide).
