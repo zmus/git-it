@@ -58,21 +58,21 @@ Is the data potentially dangerous?
 **Always use type casting** `1 == Number("1")` **instead of type juggling** `1 == "1"`
 
 **Sanitize SQL, HTML, JavaScript, JSON, XML, etc.** you are receiving
-    * **Encoding Characters**
-        * Replace powerful characters with harmless equivalents
-        * HTML: "<" with "&lt;" and ">" with "&gt;"
+  * **Encoding Characters**
+      * Replace powerful characters with harmless equivalents
+      * HTML: "<" with "&lt;" and ">" with "&gt;"
 
-    * **Escaping Characters**
-        * Add them before powerful characters
-        * SQL: "WHERE name='fake\' AND 1=1--'";
+  * **Escaping Characters**
+      * Add them before powerful characters
+      * SQL: "WHERE name='fake\' AND 1=1--'";
 
 **Do not write custom sanitization methods**
-    * Use well-tested, language-specific functions
-    * Very hard to get them right and account for all cases
+  * Use well-tested, language-specific functions
+  * Very hard to get them right and account for all cases
 
 **Do not remove or correct invalid data** - it becomes a game of cat-and-mouse.
 **Sanitize it instead.**
-
+``` 
 // Hacker tries:
 input = '<script>alert("Gotcha!");</script>'
  
@@ -105,23 +105,23 @@ For example email
 --------------------------------------------------------------------------------
 
 **Public directory**
-    * Accessible by the server
-    * Point of entry to your web site or app
-    * Be smart; eg. call functions but define them in libraries dir
+  * Accessible by the server
+  * Point of entry to your web site or app
+  * Be smart; eg. call functions but define them in libraries dir
 
 **Libraries directory**
-    * Not accessible by the server
-    * Accessible by code via the file system
+  * Not accessible by the server
+  * Accessible by code via the file system
 
 Web server configuration
-    * **Set document root** - public dir
-    * **Allow / deny access** - directory, file, filetype, IP, deny search engines...
-    * **.htaccess** file
-        * = security restrictions for containing dir 
-        * Authorization, authentication, blocking
-        * on Apache, but popular
-    * **.htpassword** 
-        * = usernames and passwords to gain access
+  * **Set document root** - public dir
+  * **Allow / deny access** - directory, file, filetype, IP, deny search engines...
+  * **.htaccess** file
+      * = security restrictions for containing dir 
+      * Authorization, authentication, blocking
+      * on Apache, but popular
+  * **.htpassword** 
+      * = usernames and passwords to gain access
 
 --------------------------------------------------------------------------------
  Keeping credentials private
@@ -151,20 +151,20 @@ Credentials used in code:
       * can be installed anywhere - any server, GitHub...
 
   * Private key
-      * usually encrypted and requires password to access it
-      * logging into a server from a local machine via SSH:
-          !. client: request to connect 
-          2. server: challenge message encrypted with public key - but can only 
-                     be decrypted with private key
-          3. client: challenge message decrypted with private key
+    * usually encrypted and requires password to access it
+    * logging into a server from a local machine via SSH:
+      1. client: request to connect 
+      2. server: challenge message encrypted with public key - but can only 
+                 be decrypted with private key
+      3. client: challenge message decrypted with private key
 
   * *Password and private key are never sent over the network* - just a message
 
   * SSH agent forwarding
-      1. C connects to a server A
-      2. if A needs to connect to a server B (database, GitHub...), send 
-         their challenge message to C
-      3. C sends an answer to A (solved with locally stored private key)
+    1. C connects to a server A
+    2. if A needs to connect to a server B (database, GitHub...), send 
+       their challenge message to C
+    3. C sends an answer to A (solved with locally stored private key)
 
 --------------------------------------------------------------------------------
  Keeping error messages vague
