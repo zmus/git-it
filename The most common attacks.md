@@ -181,7 +181,7 @@ Defense
 
       * deny:  create and drop tables, truncate tables, grant access privileges
 
-  **Sanitize input**
+  * **Sanitize input**
 
       * Escape for SQL - most programming languages have library
 
@@ -189,9 +189,10 @@ Defense
 
 OR better alternative
 
-  **Prepared Statements**
-    * query is not a string, it is a program or function with inputs so we can't 
-      manufacture a bad string
+  * **Prepared Statements**
+
+      * query is not a string, it is a program or function with inputs so we can't 
+        manufacture a bad string
 
   ```sql
   -- setting up the SQL program... ? = input
@@ -211,7 +212,9 @@ OR better alternative
 Simple, but still dangerous.
 
 Used for
+
   * revealing private information
+  
   * performing restricted actions
 
 Attack
