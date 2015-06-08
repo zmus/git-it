@@ -60,7 +60,7 @@ Is the data potentially dangerous?
 **Sanitize SQL, HTML, JavaScript, JSON, XML, etc.** you are receiving
   * **Encoding Characters**
       * Replace powerful characters with harmless equivalents
-      * HTML: "<" with "&lt;" and ">" with "&gt;"
+      * HTML: < with  `&lt;` and > with `&gt;`
 
   * **Escaping Characters**
       * Add them before powerful characters
@@ -72,7 +72,7 @@ Is the data potentially dangerous?
 
 **Do not remove or correct invalid data** - it becomes a game of cat-and-mouse.
 **Sanitize it instead.**
-``` 
+```JavaScript
 // Hacker tries:
 input = '<script>alert("Gotcha!");</script>'
  
