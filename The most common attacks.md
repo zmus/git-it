@@ -214,7 +214,7 @@ Simple, but still dangerous.
 Used for
 
   * revealing private information
-  
+
   * performing restricted actions
 
 Attack
@@ -340,18 +340,19 @@ Used to
 
 Often done by network eavesdropping
 
-  * Very easy on open wireless networks at coffe shops!
+  * Very easy on open wireless networks at coffe shops! Download software 
+    and voila
 
-  * download software and voila
+Defense    
 
-Save 'user agent' string in session and confirm it 
+* Save 'user agent' string in session and confirm it 
 
   * e.g. if user logs in with a certain version of Firefox, then expect all 
     future requests to also be from Firefox - if not, prompt to log-in again
 
   * header can be modified, so it's **weak**
 
-Check IP adress
+* Check IP adress
 
   * expect all requests to be from same IP as log-in - if not, prompt to log-in 
     again
@@ -360,7 +361,9 @@ Check IP adress
     * IP of legitimate users may change if they move between APs or cellphone 
       towers
     * multiple computers sharing the same IP adress - corporate, coffe shops...
+
 ---
+
 ####better
 
 **HttpOnly cookies**
@@ -375,7 +378,9 @@ Check IP adress
     recent 
 
   * e.g. 'last updated' time of a file or record in a dbs
+
 ---
+
 ####BEST
 
 **SSL with Secure cookies**
