@@ -366,18 +366,18 @@ Defense
 
 ####better
 
-**HttpOnly cookies**
+* **HttpOnly cookies**
 
-**Regenerate session identifier periodically, at key points**
+* **Regenerate session identifier periodically, at key points**
 
-  * Especially important **after log in**
+    * Especially important **after log in**
 
-**Expire/remove old session files regularly**
+* **Expire/remove old session files regularly**
 
-  * Keep track of last activity in session and expire sessions without any 
-    recent 
+    * Keep track of last activity in session and expire sessions without any 
+      recent 
 
-  * e.g. 'last updated' time of a file or record in a dbs
+    * e.g. 'last updated' time of a file or record in a dbs
 
 ---
 
@@ -408,20 +408,26 @@ GET /login HTTP/1.1
 Host: yourbank.com
 Cookie: SESSION_ID=3e1234ra4def8aef9472c
 
+// hacker creates a link
 http://yourbank.com/login?SESSION_ID=a1b2c3d4e5f6g7h8i9
 
+// user opens it
 GET /login HTTP/1.1
 Host: yourbank.com
 Cookie: SESSION_ID=a1b2c3d4e5f6g7h8i9
+
+// now session is valid and hacker has it's ID
 ```
 
-**Do not accept session identifiers from GET or POST variables, only from
-  cookies**
+Defense
 
-**Regenerate session identifier periodically, at key points**
-  * Especially important **after log in**
+* **Do not accept session identifiers from GET or POST variables, only from
+    cookies**
 
-**Expire/remove old session files regularly**
+* **Regenerate session identifier periodically, at key points**
+    * Especially important **after log in**
+
+* **Expire/remove old session files regularly**
 
 --------------------------------------------------------------------------------
  Remote system execution 
@@ -434,9 +440,9 @@ Used to
 
   * add/delete/modify files
 
-  * change access privileges / passwords / IP adress...
+  * change access privileges/passwords/IP adress...
 
-Most powerful hack and hardest to achieve - unless you make it easy.
+**Most powerful hack and hardest to achieve** - unless you make it easy.
 
 Most programming languages:
 
