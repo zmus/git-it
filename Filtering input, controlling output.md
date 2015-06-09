@@ -2,17 +2,17 @@
  Filtering input / Controlling output
 ================================================================================
 
-* [Regulating requests](#-regulating-requests)
-* [Validating input](#-validating-input)
-* [Sanitizing data](#-sanitizing-data)
-* [Labeling variables](#-labeling-variables)
-* [Keeping code private](#-keeping-code-private)
-* [Keeping credentials private](#-keeping-credentials-private)
-* [Keeping error messages vague](#-keeping-error-messages-vague)
-* [Smart logging](#-smart-logging)
+* [Regulating requests](#regulating-requests)
+* [Validating input](#validating-input)
+* [Sanitizing data](#sanitizing-data)
+* [Labeling variables](#labeling-variables)
+* [Keeping code private](#keeping-code-private)
+* [Keeping credentials private](#keeping-credentials-private)
+* [Keeping error messages vague](#keeping-error-messages-vague)
+* [Smart logging](#smart-logging)
 
 --------------------------------------------------------------------------------
- Regulating requests
+Regulating requests
 --------------------------------------------------------------------------------
 
 **Accept *only* expected HTTP request methods** and ignore all others.
@@ -25,7 +25,7 @@
   * any MIME type (RSS, PDF, image, audio, video...)
 
 --------------------------------------------------------------------------------
- Validating input
+Validating input
 --------------------------------------------------------------------------------
 
 **Regulate all the possible fields - only allow expected data**
@@ -59,7 +59,7 @@ Common validations:
       * unique blog post titles
 
 --------------------------------------------------------------------------------
- Sanitizing data
+Sanitizing data
 --------------------------------------------------------------------------------
 
 Is the data potentially dangerous?
@@ -98,7 +98,7 @@ input = '<script>alert("Gotcha!");</script>'
 Consider where data will go later (JSON, XML...) and **sanitize for each filetype**.
 
 --------------------------------------------------------------------------------
- Labeling variables
+Labeling variables
 --------------------------------------------------------------------------------
 
 **Use var names to identify condition of data**  
@@ -110,7 +110,7 @@ For example email
   * sanitized:      var safeEmail = sanitize(rawEmail);     
 
 --------------------------------------------------------------------------------
- Keeping code private
+Keeping code private
 --------------------------------------------------------------------------------
 
 **Public directory**
@@ -133,7 +133,7 @@ Web server configuration
       * = usernames and passwords to gain access
 
 --------------------------------------------------------------------------------
- Keeping credentials private
+Keeping credentials private
 --------------------------------------------------------------------------------
 
 Credentials used in code:
@@ -176,7 +176,7 @@ Credentials used in code:
     3. C sends an answer to A (solved with locally stored private key)
 
 --------------------------------------------------------------------------------
- Keeping error messages vague
+Keeping error messages vague
 --------------------------------------------------------------------------------
 
 'Security through obscurity' principle.
@@ -188,7 +188,7 @@ Leave hackers in the dark with minimal feedback:
   * **Configure web server to use same error pages as application**
 
 --------------------------------------------------------------------------------
- Smart logging
+Smart logging
 --------------------------------------------------------------------------------
 
 Errors
