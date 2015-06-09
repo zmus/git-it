@@ -2,18 +2,18 @@
  Encryption and user authentication
 ================================================================================
 
-* [Password encryption](#-password-encryption)
-* [Salting passwords](#-salting-passwords)
-* [Password requirements](#-password-requirements)
-* [Brute-force attacks](#-brute-force-attacks)
-* [Using SSL for login](#-using-ssl-for-login)
-* [Protection cookies](#-protection-cookies)
-* [Regulating access privileges](#-regulating-access-privileges)
-* [Handling forgotten passwords](#-handling-forgotten-passwords)
-* [Multi-factor authentication](#-multi-factor-authentication)
+* [Password encryption](#password-encryption)
+* [Salting passwords](#salting-passwords)
+* [Password requirements](#password-requirements)
+* [Brute-force attacks](#brute-force-attacks)
+* [Using SSL for login](#using-ssl-for-login)
+* [Protection cookies](#protection-cookies)
+* [Regulating access privileges](#regulating-access-privileges)
+* [Handling forgotten passwords](#handling-forgotten-passwords)
+* [Multi-factor authentication](#multi-factor-authentication)
 
 --------------------------------------------------------------------------------
- Password encryption
+Password encryption
 --------------------------------------------------------------------------------
 
 **Never store passwords in plain text**
@@ -43,7 +43,7 @@ Not all hashing algorithms are suitable for passwords
     * slow - desired for hashing because of brute force / dictionary attacks
 
 --------------------------------------------------------------------------------
- Salting passwords
+Salting passwords
 --------------------------------------------------------------------------------
 
 Rainbow tables
@@ -87,7 +87,7 @@ Rainbow tables
     "hashed salt" + "hashed password"
 
 --------------------------------------------------------------------------------
- Password requirements
+Password requirements
 --------------------------------------------------------------------------------
 
 **Require length, but do not limit it**
@@ -112,7 +112,7 @@ Rainbow tables
   * hacker might be someone who knows you
 
 --------------------------------------------------------------------------------
- Brute-force attacks
+Brute-force attacks
 --------------------------------------------------------------------------------
 
 Also known as "Exhaustive key search"
@@ -153,7 +153,7 @@ Brute-force can't be stopped, but can be significantly slowed down.
 
 
 --------------------------------------------------------------------------------
- Using SSL for login
+Using SSL for login
 --------------------------------------------------------------------------------
 
 "Secure Sockets Layer"
@@ -206,7 +206,7 @@ Using SSL
     * user-configurable (Facebok)
 
 --------------------------------------------------------------------------------
- Protection cookies
+Protection cookies
 --------------------------------------------------------------------------------
 
 = after login, maintain authenticated access using cookies and sessions
@@ -232,7 +232,7 @@ We take user's credentials, authenticate them, and give him a cookie.
   * **set cookie expiration, remove session file**
 
 --------------------------------------------------------------------------------
- Regulating access privileges
+Regulating access privileges
 --------------------------------------------------------------------------------
 
 **Least privileges** principle
@@ -265,7 +265,7 @@ Orders  { categories, tags, customers, orders }
   * Paying customers: free, standard, VIP
 
 --------------------------------------------------------------------------------
- Handling forgotten passwords
+Handling forgotten passwords
 --------------------------------------------------------------------------------
 
 What proves someone's identity?
@@ -306,7 +306,7 @@ Enough for most websites - email of the person is their ID
     * Self-serve; does not require customer service stuff, can reset anytime
 
 --------------------------------------------------------------------------------
- Multi-factor authentication
+Multi-factor authentication
 --------------------------------------------------------------------------------
 
 = Authentication requires two (or more) factors from different categories
