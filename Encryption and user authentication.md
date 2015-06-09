@@ -13,21 +13,22 @@
 
 **One-way encryption**
   * = non-reversible, even by us
-  * Same inputs + same hashing algorithm = same output
+  * Same inputs + same hashing algorithm = same outputs
   * Actual password gets encrypted, then stored
   * Encrypt attempted password, compare against stored
 
 Not all hashing algorithms are suitable for passwords
-  * one-way
-  * sufficiently strong 
-  * --MD5-- not considered safe anymore - see 'rainbow tables'
+  * Must be
+    * one-way
+    * sufficiently strong 
+  * --MD5-- not considered safe anymore - 'rainbow tables'
   * SHA-1
   * SHA-2 (SHA-256, SHA-512)
   * Tiger
   * AES
   * **Blowfish**
     * very secure
-    * free - 
+    * free
     * easy to install and work with
     * slow - desired for hashing because of brute force / dictionary attacks
 
@@ -50,18 +51,18 @@ Not all hashing algorithms are suitable for passwords
 **Unique salt**
   * = Create salt using strings *unique to each user*
   * Knowing password requires *knowing salt and username*
-    ```
-    "Put salt on the {$password} for {$username}"
-    "aef6603ed62eb1u30fd5305ac6e8ad50a55d111de"
-    ```
+  ```
+  "Put salt on the {$password} for {$username}"
+  "aef6603ed62eb1u30fd5305ac6e8ad50a55d111de"
+  ```
 
 **Random salt**
   * = Create salt using pseudo-random string
   * Knowing password requires *knowing the random string*
-    ```
-    "Put salt on the {$password} at" . time() 
-    "b137f51092926eaeffa294af0dab49ec726e1ccef"
-    ```
+```
+"Put salt on the {$password} at" . time() 
+"b137f51092926eaeffa294af0dab49ec726e1ccef"
+```
   * Rainbow tables are useless - each user's hash is almost random / unique
 
 **Store salt in database** 
