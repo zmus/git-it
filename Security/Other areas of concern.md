@@ -43,6 +43,7 @@ Some best practices
   1. Processor stores card information you've sent 
   2. Sends back a reference token
   3. Refer to information by token whenever you need it  
+  
   * If token gets stolen, it's useless
   * *High security* - managed by security specialists
   * Makes PCI compliance easier
