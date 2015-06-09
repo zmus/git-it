@@ -2,24 +2,15 @@
  Encryption and user authentication
 ================================================================================
 
-[Password encryption](#-password-encryption)
-
-[Salting passwords](#-salting-passwords)
-
-[Password requirements](#-password-requirements)
-
-[Brute-force attacks](#-brute-force-attacks)
-
-[Using SSL for login](#-using-ssl-for-login)
-
-[Protection cookies](#-protection-cookies)
-
-[Regulating access privileges](#-regulating-access-privileges)
-
-[Handling forgotten passwords](#-handling-forgotten-passwords)
-
-[Multi-factor authentication](#-multi-factor-authentication)
-
+* [Password encryption](#-password-encryption)
+* [Salting passwords](#-salting-passwords)
+* [Password requirements](#-password-requirements)
+* [Brute-force attacks](#-brute-force-attacks)
+* [Using SSL for login](#-using-ssl-for-login)
+* [Protection cookies](#-protection-cookies)
+* [Regulating access privileges](#-regulating-access-privileges)
+* [Handling forgotten passwords](#-handling-forgotten-passwords)
+* [Multi-factor authentication](#-multi-factor-authentication)
 
 --------------------------------------------------------------------------------
  Password encryption
