@@ -8,7 +8,7 @@
 * [URL manipulation](#-url-manipulation)
 * [Faked requests](#-faked-requests)
 * [Faked forms](#-faked-forms)
-* [Cookie visibility and theft](#-cookie-visibility-theft)
+* [Cookie visibility and theft](#-cookie-visibility-and-theft)
 * [Session hijacking](#-session-hijacking)
 * [Session fixation](#-session-fixation)
 * [Remote system execution](#-remote-system-execution)
