@@ -2,10 +2,12 @@
  Encryption and user authentication
 ================================================================================
 
-[Password encryption](Encryption and user authentication#password-encryption)
-[Password encryption](Encryption and user authentication#Password encryption)
+[Password encryption](#Salting passwords)
 
-[Password encryption](#Password-encryption)
+[Password encryption](#Salting-passwords)
+
+[Password encryption](#salting-passwords)
+
 --------------------------------------------------------------------------------
  Password encryption
 --------------------------------------------------------------------------------
