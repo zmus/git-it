@@ -7,7 +7,7 @@
 * [Never trust users](#-never-trust-users)
 * [Expect the unexpected](#-expect-the-unexpected)
 * [Defense in depth](#-defense-in-depth)
-* [Security through obsurity](#-security-through-obscurity)
+* [Security through obscurity](#-security-through-obscurity)
 * [Blacklisting and whitelisting](#-blacklisting-and-whitelisting)
 * [Map exposure points and data passageways](#-map-exposure-points-and-data-passageways)
 
