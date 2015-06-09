@@ -2,13 +2,28 @@
  The most common attacks
 ================================================================================
 
+* [Cross-site scripting](#-cross-site-scripting)
+* [Cross-site request forgery](#-cross-site-request-forgery)
+* [SQL injection](#-sql-injection)
+* [URL manipulation](#-url-manipulation)
+* [Faked requests](#-faked-requests)
+* [Faked forms](#-faked-forms)
+* [Cookie visibility and theft](#-cookie-visibility-theft)
+* [Session hijacking](#-session-hijacking)
+* [Session fixation](#-session-fixation)
+* [Remote system execution](#-remote-system-execution)
+* [File upload abuse](#-file-upload-abuse)
+* [Denial of service ](#-denial-of-service)
+
 The Big Three: XSS, CSRF, SQL injection. 
 
 Manage them first!
 
 --------------------------------------------------------------------------------
- Cross-site scripting "XSS"
+ Cross-site scripting
 --------------------------------------------------------------------------------
+
+"XSS"
 
 = Inject JS into a web page 
 
@@ -69,8 +84,10 @@ If HTML must be allowed (CMS)
   * Sanitize everything else
 
 --------------------------------------------------------------------------------
- Cross-site request forgery "CSRF"
+ Cross-site request forgery 
 --------------------------------------------------------------------------------
+
+"CSRF"
 
 = Trick users into making a request to your server
 
@@ -501,8 +518,10 @@ Defense:
   * **Do not host uploaded files which have not been verified**
 
 --------------------------------------------------------------------------------
- Denial of service "DoS"
+ Denial of service 
 --------------------------------------------------------------------------------
+
+"DoS"
 
 = Attempt to make a server unavailable to users
 
