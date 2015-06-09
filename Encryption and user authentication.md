@@ -165,8 +165,8 @@ password: goku
 Set-Cookie: SESSION_ID=A182C3D4E5 
 ```
 
-  * Hardware closest to the client 'sees' both incoming and outcoming traffic 
-    - e.g. open Wi-Fi at coffe shop
+  * Hardware closest to the client 'sees' both incoming and outcoming traffic -
+    e.g. open Wi-Fi at coffe shop
 
 Using SSL 
 
@@ -209,7 +209,7 @@ We take user's credentials, authenticate them, and give him a cookie.
 * **Regenerate session identifier** periodically, at key points - **after login**
   * 'session fixation' attacks
 
-* Expire/remove old sesion files regularly
+* **Expire/remove old sesion files regularly**
 
 * **Do not accept session identifiers from GET or POST variables**
 
@@ -233,16 +233,16 @@ Be organized
 
 **Restrict access to access privilege administration tools** - 1 or 2 people
 
-Be careful about getting to fine-grained
+Be careful about getting too fine-grained
 
-**Structure content into discrete *privilege areas* ** - don't let them overlap
+**Structure content into discrete *privilege areas*** - don't let them overlap
 ```
 Article { article content, article images, article categories, related articles }
 Product { product details, product images, product catefories, related products }
 Orders  { categories, tags, customers, orders }
 ```
-editor = Article + product images
-seller = customers + orders etc.
+  * editor = Article + product images
+  * seller = customers + orders etc.
 
 **Regulate access by user access level or category**
 
@@ -252,7 +252,7 @@ seller = customers + orders etc.
 
   * publisher, writer, editor, designer, graphics
 
-  * Paying customers - free, standard, VIP
+  * Paying customers: free, standard, VIP
 
   
 
