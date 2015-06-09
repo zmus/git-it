@@ -155,18 +155,18 @@ Brute-force can't be stopped, but can be significantly slowed down.
 Communication between client and server passes through multiple hardware and
 can easily be seen:
 
-client to server
+  * client to server
 ```
 username: son
 password: goku
 ```
-server to client
+  * server to client
 ```
 Set-Cookie: SESSION_ID=A182C3D4E5 
 ```
 
-Hardware closest to the client 'sees' both incoming and outcoming traffic 
-- e.g. open Wi-Fi at coffe shop
+  * Hardware closest to the client 'sees' both incoming and outcoming traffic 
+    - e.g. open Wi-Fi at coffe shop
 
 Using SSL 
 
