@@ -5,9 +5,9 @@
 * [Regulating requests](#-regulating-requests)
 * [Validating input](#-validating-input)
 * [Sanitizing data](#-sanitizing-data)
-* [Labeling variables](#-labelling-variables)
+* [Labeling variables](#-labeling-variables)
 * [Keeping code private](#-keeping-code-private)
-* [Keeping credentials private](#-keeping credentials-private)
+* [Keeping credentials private](#-keeping-credentials-private)
 * [Keeping error messages vague](#-keeping-error-messages-vague)
 * [Smart logging](#-smart-logging)
 
