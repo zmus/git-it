@@ -11,7 +11,7 @@
 
 **Encrypt passwords with hashing algorithm** 
 
-**One-way encryption**
+One-way encryption
   * = non-reversible, even by us
   * Same inputs + same hashing algorithm = same outputs
   * Actual password gets encrypted, then stored
@@ -36,25 +36,25 @@ Not all hashing algorithms are suitable for passwords
  Salting passwords
 --------------------------------------------------------------------------------
 
-**Rainbow tables**
+Rainbow tables
   * = Pre-computed tables of password hashes for each hashing algorithm
 
 **Salt**
   * = Additional data added to the password before encryption
   * Knowing password requires also *knowing the salt string*
-    ```
-    "Put salt on the {$password}"
-    "e737f991346ba46a123678ee900d0e636e68e860f"
-    ```
+```
+"Put salt on the {$password}"
+"e737f991346ba46a123678ee900d0e636e68e860f"
+```
   * Rainbow tables would be almost impossibly large
 
 **Unique salt**
   * = Create salt using strings *unique to each user*
   * Knowing password requires *knowing salt and username*
-  ```
-  "Put salt on the {$password} for {$username}"
-  "aef6603ed62eb1u30fd5305ac6e8ad50a55d111de"
-  ```
+```
+"Put salt on the {$password} for {$username}"
+"aef6603ed62eb1u30fd5305ac6e8ad50a55d111de"
+```
 
 **Random salt**
   * = Create salt using pseudo-random string
@@ -71,7 +71,7 @@ Not all hashing algorithms are suitable for passwords
   * Just the salt, not the plain text password
   * Hash the salt 
 
-Blowfish 
+**Blowfish** 
   * uses a random salt 
   * stores it in a database in front of password as a single encrypted string:
     "hashed salt" + "hashed password"
@@ -80,7 +80,7 @@ Blowfish
  Password requirements
 --------------------------------------------------------------------------------
 
-**Require length, but do not limit length**
+**Require length, but do not limit it**
   * longer = stronger
   * After hashing, encrypted strings are always of the same length 
 
@@ -97,7 +97,7 @@ Blowfish
   * some users will simply type their password, and then it is available in
     plain text to anyone trying to break in
 
-**Security questins are questionable**
+**Security questions are questionable**
   * answers can be googled
   * hacker might be someone who knows you
 
@@ -108,37 +108,35 @@ Blowfish
 Also known as "Exhaustive key search"
 
 rainbow tables = we know hashed password
+vs.
 brute force    = we go to the website and try every single possibility
 
 Dictionary attack
   * try to use words in the dictionary first
   * idea is that words in dictionary are used before random characters
 
-Key space ^ Key length  x  Time per attempt  =  Maximum Time required 
+Key space ^ Key length  x  Time per attempt  =  Maximum Time required
 
-Key space:  allow all characters (uppercase, lowercase, numbers, symbols)
+Key space:  **allow all characters** (uppercase, lowercase, numbers, symbols)
 
-Key length:  allow long strings
+Key length:  **allow long strings**
 
-Time per attempt:  decreasing as computers get faster
+Time per attempt:  **use slower hashing algorithm*
 
 **Encourage users to provide strong passwords**
 
-**Slow password hashing algorithms**
-
-**Timing and throttling**
-  * configure firewall, server or app to slow down the rate at which requests
-    can be received
+Timing and throttling
+  * **configure firewall, server or app to slow down the rate at which requests
+    can be received**
   * 1 attempt per 2s
   * lock account for 5min after 20 attempts
 
-**Logging**
-  * don't log attempted password in plain text
-  * "login was attempted"
-  * "20 attempts from 160.54.49.32"
+Logging
+  * **don't log attempted password in plain text**
+  * "20 attempts from 160.54.49.32" - good
 
-**Blacklisting**
-  * ban an IP address from sending more requests
+Blacklisting
+  * **ban an IP address from sending more requests**
   * could be hundreds of botnets
 
 Brute-force can't be stopped, but can be significantly slowed down.
@@ -155,15 +153,14 @@ Brute-force can't be stopped, but can be significantly slowed down.
   2. Encrypts all data exchanged with server
 
 Communication between client and server passes through multiple hardware and
-can easily be seen.
+can easily be seen:
 
-client to server:
+client to server
 ```
 username: son
 password: goku
 ```
-```
-server to client:
+server to client
 ```
 Set-Cookie: SESSION_ID=A182C3D4E5 
 ```
