@@ -331,27 +331,28 @@ MFA web implementation
   2. Site logs computer being used
     * IP address, set cookie or other 
 
-  3.a Future logins from same device approved
-    * *knows* password
-    * *has* computer
-
-  3.b Future logins from new device require additional factor
-
-    * Send email to account on file
-      * with passcode to enter or URL to click
+  3.
+    1. Future logins from *same device* approved
       * *knows* password
-      * *has* email account
+      * *has* computer
 
-    * Send SMS message to mobile phone on file
-      * with passcode to enter or require an SMS response
-      * *knows* password
-      * *has* phone
+    2. Future logins from *new device* require additional factor
 
-    * Call phone on file with recorded message
-      * with passcode to enter or require voice response
-      * *knows* password
-      * *has* phone
-      * Works with non-mobile phones without SMS
+      * Send email to account on file
+        * with passcode to enter or URL to click
+        * *knows* password
+        * *has* email account
+
+      * Send SMS message to mobile phone on file
+        * with passcode to enter or require an SMS response
+        * *knows* password
+        * *has* phone
+
+      * Call phone on file with recorded message
+        * with passcode to enter or require voice response
+        * *knows* password
+        * *has* phone
+        * Works with non-mobile phones without SMS
 
 MFA implementation pitfalls
   * Most users are not familiar with it
