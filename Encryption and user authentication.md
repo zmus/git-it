@@ -2,11 +2,16 @@
  Encryption and user authentication
 ================================================================================
 
-[Password encryption](#Salting passwords)
+[Password encryption](#-password-encryption)
+[Salting passwords](#-salting-passwords)
+[Password requirements](#-password-requirements)
+[Brute-force attacks](#-brute-force-attacks)
+[Using SSL for login](#-using-ssl-for-login)
+[Protection cookies](#-protection-cookies)
+[Regulating access privileges](#-regulating-access-privileges)
+[Handling forgotten passwords](#-handling-forgotten-passwords)
+[Multi-factor authentication](#-multi-factor-authentication)
 
-[Password encryption](#Salting-passwords)
-
-[Password encryption](#salting-passwords)
 
 --------------------------------------------------------------------------------
  Password encryption
@@ -228,7 +233,7 @@ We take user's credentials, authenticate them, and give him a cookie.
   * **set cookie expiration, remove session file**
 
 --------------------------------------------------------------------------------
- Regulating acces privileges
+ Regulating access privileges
 --------------------------------------------------------------------------------
 
 **Least privileges** principle
