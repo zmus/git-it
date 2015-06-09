@@ -331,12 +331,12 @@ MFA web implementation
   2. Site logs computer being used
     * IP address, set cookie or other 
 
-  3.
-    1. Future logins from *same device* approved
+  3. Future logins from
+    1. same device - approved
       * *knows* password
       * *has* computer
 
-    2. Future logins from *new device* require additional factor
+    2. new device - require additional factor
 
       * Send email to account on file
         * with passcode to enter or URL to click
