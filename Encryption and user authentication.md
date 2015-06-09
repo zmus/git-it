@@ -204,7 +204,7 @@ Using SSL
 Like a hand-stamp - we don't authenticate each time.
 We take user's credentials, authenticate them, and give him a cookie.
 
-* Use **HttpOnly cookies** - inaccessible to JS
+* **Use HttpOnly cookies** - inaccessible to JS
 
 * **Regenerate session identifier** periodically, at key points - **after login**
   * 'session fixation' attacks
@@ -213,9 +213,9 @@ We take user's credentials, authenticate them, and give him a cookie.
 
 * **Do not accept session identifiers from GET or POST variables**
 
-* Use **SSL**
+* **Use SSL**
 
-* Use **Secure cookies** - only sent over SSL 
+* **Use Secure cookies** - only sent over SSL 
   * Especially important if switching between HTTP and HTTPS
 
 * Consider expiring logins after a set period of time
@@ -254,8 +254,116 @@ Orders  { categories, tags, customers, orders }
 
   * Paying customers: free, standard, VIP
 
-  
+--------------------------------------------------------------------------------
+ Handling forgotten passwords
+--------------------------------------------------------------------------------
 
+What proves someone's identity?
+
+A series of security challenge questions
+  * generated ahead of time with the user...
+  * or based on what we know about user (account, activity...)
+
+High security environments
+  * Privileged information - e.g. ATM card number plus PIN
+  * Customer service staff - remote or in person
+  
+Enough for most websites - email of the person is their ID
+  * Send email with new password
+    * if not deleted, email account has plain text copy 
+    * password is reseted - someone else can lockout user from account
+  * Send email with reset token
+
+**Email a reset token**
+
+  1. Request the username to reset
+
+    * Always respond positively
+      * e.g. "Email with password reset will be delivered shortly"
+      * "User not found" gives away information to hacker
+
+  2. Generate a unique token + store in database
+
+    * probably some kind of hash, about 40 characters long
+    * *store token generation time + set expiration time*
+
+  3. Email a URL that includes token
+
+    * URL grants access; allows setting password
+
+  * Advantages
+    * Account still functions up until the reset   
+    * Self-serve; does not require customer service stuff, can reset anytime
+
+--------------------------------------------------------------------------------
+ Multi-factor authentication
+--------------------------------------------------------------------------------
+
+= Authentication requires two (or more) factors from different categories
+
+3 categories - something only the user
+  * knows
+  * has
+  * is
+
+Bank ATM card
+  * *has* card
+  * *knows* PIN
+
+Credit card purchases online 
+  * *knows* card number
+  * *has* physical card with CVV code
+
+Number-generating ID device
+  * *knows* password
+  * *has* device present right now 
+ 
+Something only the user *is*
+  * Biometrics - fingerprint, voice, retina
+  * Harder to aquire
+  * Tricky and expensive to do it well
+  * Often have reliability or security issues
+
+MFA web implementation
+
+  1. User creates an account
+
+  2. Site logs computer being used
+    * IP address, set cookie or other 
+
+  3.a Future logins from same device approved
+    * *knows* password
+    * *has* computer
+
+  3.b Future logins from new device require additional factor
+
+    * Send email to account on file
+      * with passcode to enter or URL to click
+      * *knows* password
+      * *has* email account
+
+    * Send SMS message to mobile phone on file
+      * with passcode to enter or require an SMS response
+      * *knows* password
+      * *has* phone
+
+    * Call phone on file with recorded message
+      * with passcode to enter or require voice response
+      * *knows* password
+      * *has* phone
+      * Works with non-mobile phones without SMS
+
+MFA implementation pitfalls
+  * Most users are not familiar with it
+  * Reluctance to provide additional data
+  * Need to provide clear instructions
+  * Reliability
+  * Error handling - has to be done extremely well; consider all possibilities
+  * Customer service issues - users might get frustrated
+
+**For average websites MFA may not be worth the additional headaches.**
+
+**For high profile or high security, it may be essential.**
 
 
 
