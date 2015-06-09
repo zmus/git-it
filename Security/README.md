@@ -48,7 +48,7 @@
   * [Handling forgotten passwords](Encryption%20and%20user%20authentication.md#handling-forgotten-passwords)
   * [Multi-factor authentication](Encryption%20and%20user%20authentication.md#multi-factor-authentication)
 
-[Other areas of concert](Other%20areas%20of%20concern.md)
+[Other areas of concern](Other%20areas%20of%20concern.md)
   * [Credit card payments](Other%20areas%20of%20concern.md#credit-card-payments)
   * [Regular expression flaws](Other%20areas%20of%20concern.md#regular-expression-flaws)
   * [Conversions and transformations](Other%20areas%20of%20concern.md#conversions-and-transformations)

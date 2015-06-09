@@ -65,37 +65,34 @@ It doesn't have to be complicated to be flawed.
 
 case 1: Check if string contains only letters and numbers
 
-`/[a-zA-z0-9]*/`
+  * `/[a-zA-z0-9]*/`
 
-`*` zero or more characters
-`+` one or more characters
+  * `*` zero or more characters `+` one or more characters
 
-RegEx accidentaly includes empty strings.
+  * RegEx accidentaly includes empty strings.
 
 case 2: Check if date string is formatted correctly
 
-`/^\d{4}-\d{2}-\d{2}$/`
+  * `/^\d{4}-\d{2}-\d{2}$/`
 
-`d` digit
+  * `d` digit
 
-`^` start of line
-`$` end of line
+  * `^` start of line `$` end of line
 
-`\A` start of string
-`\Z` end of string
+  * `\A` start of string `\Z` end of string
 
-If we had correctly formatted date followed by line return LR, and then more data,
-RegEx would allow it.
+  * If we had correctly formatted date followed by line return LR, and then more
+    data, RegEx would allow it.
 
 case 3: Pull first and last name from comma delimited data
 
-`/First: (.+), Last: (.+),/`
+  * `/First: (.+), Last: (.+),/`
 
-"First: Tom, Last: Smith, City: Denver,"
+  * "First: Tom, Last: Smith, City: Denver,"
 
-`.+` is greedy  =>  chooses last comma  => "Tom", "Smith, City: Denver" 
+  * `.+` is greedy  =>  chooses last comma  => "Tom", "Smith, City: Denver" 
 
-`.?` not greedy =>  chooses first comma => "Tom", "Smith"
+  * `.?` not greedy =>  chooses first comma => "Tom", "Smith"
 
 --------------------------------------------------------------------------------
 Conversions and transformations
@@ -156,7 +153,7 @@ Git, Subversion, Mercurial, TFS, SourceSafe, CVS, Bazaar...
 * **Removing data later is difficult**
     * You can see it in old versions
     * Many SCM are designed to prevent data loss/removal
-    * If you change commit by force, it's ID and ID of every 
+    * If you change commit by force, its ID and ID of every 
       successor commit are changed = BIG MESS
 
 --------------------------------------------------------------------------------
@@ -194,7 +191,6 @@ Superuser - has power of a root, but it's not root itself
   * 22 SSH, SFTP - e.g. change to 1204, so hacker needs to guess it
   * most ports < 1000 are reserved
 
-**Keep software up to date**
-  * security fixes provide map for hackers
+**Keep software up to date** - security fixes provide map for hackers
 
 **Disable/remove anything not needed** - edit configuration file
