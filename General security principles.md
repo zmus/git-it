@@ -2,17 +2,17 @@
  General security principles
 ================================================================================
 
-* [Least privilege](#-least-privilege)
-* [Simple is more secure](#-simple-is-more-secure)
-* [Never trust users](#-never-trust-users)
-* [Expect the unexpected](#-expect-the-unexpected)
-* [Defense in depth](#-defense-in-depth)
-* [Security through obscurity](#-security-through-obscurity)
-* [Blacklisting and whitelisting](#-blacklisting-and-whitelisting)
-* [Map exposure points and data passageways](#-map-exposure-points-and-data-passageways)
+* [Least privilege](#least-privilege)
+* [Simple is more secure](#simple-is-more-secure)
+* [Never trust users](#never-trust-users)
+* [Expect the unexpected](#expect-the-unexpected)
+* [Defense in depth](#defense-in-depth)
+* [Security through obscurity](#security-through-obscurity)
+* [Blacklisting and whitelisting](#blacklisting-and-whitelisting)
+* [Map exposure points and data passageways](#map-exposure-points-and-data-passageways)
 
 --------------------------------------------------------------------------------
- Least privilege
+Least privilege
 --------------------------------------------------------------------------------
 
 Every program and every privileged user of the system should operate using 
@@ -27,7 +27,7 @@ Benefits:
       * Vulnerabilities are limited and localized
 
 --------------------------------------------------------------------------------
- Simple is more secure
+Simple is more secure
 --------------------------------------------------------------------------------
 
 * Use clearly named functions and variables
@@ -46,7 +46,7 @@ Benefits:
 * Disable or remove unused features when possible
 
 --------------------------------------------------------------------------------
- Never trust users
+Never trust users
 --------------------------------------------------------------------------------
 
 * Be paranoid
@@ -58,7 +58,7 @@ Benefits:
 * Even offline - phone, email, printing
 
 --------------------------------------------------------------------------------
- Expect the unexpected
+Expect the unexpected
 --------------------------------------------------------------------------------
 
 * "What are all the thing a user coudld try on this page?"
@@ -66,7 +66,7 @@ Benefits:
 * Consider edge cases
 
 --------------------------------------------------------------------------------
- Defense in depth
+Defense in depth
 --------------------------------------------------------------------------------
 
 Layered defense slowing the advance of an attacker 
@@ -93,7 +93,7 @@ Layered defense slowing the advance of an attacker
         * what are procedures and options available to them based on attack?
 
 --------------------------------------------------------------------------------
- Security through obsurity
+Security through obsurity
 --------------------------------------------------------------------------------
 
 Similarly to least privilege, expose only necessary *information*.
@@ -115,7 +115,7 @@ Similarly to least privilege, expose only necessary *information*.
   * Don't try to confuse hackers with strange table names ('simple is more secure')
 
 --------------------------------------------------------------------------------
- Blacklisting and whitelisting
+Blacklisting and whitelisting
 --------------------------------------------------------------------------------
 
 **Whitelisting** 
@@ -124,7 +124,7 @@ Similarly to least privilege, expose only necessary *information*.
     * Users who can access, actions they can take, types of data that are allowed...
 
 --------------------------------------------------------------------------------
- Map exposure points and data passageways
+Map exposure points and data passageways
 --------------------------------------------------------------------------------
     
 **Income exposure points**
