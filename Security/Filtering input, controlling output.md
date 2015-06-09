@@ -161,7 +161,7 @@ Credentials used in code:
 
   * Private key
     * usually encrypted and requires password to access it
-    * logging into a server from a local machine via SSH:
+    * **logging into a server from a local machine via SSH:**
       1. client: request to connect 
       2. server: challenge message encrypted with public key - but can only 
                  be decrypted with private key
