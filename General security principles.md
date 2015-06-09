@@ -2,6 +2,15 @@
  General security principles
 ================================================================================
 
+* [Least privilege](#-least-privilege)
+* [Simple is more secure](#-simple-is-more-secure)
+* [Never trust users](#-never-trust-users)
+* [Expect the unexpected](#-expect-the-unexpected)
+* [Defense in depth](#-defense-in-depth)
+* [Security through obsurity](#-security-through-obscurity)
+* [Blacklisting and whitelisting](#-blacklisting-and-whitelisting)
+* [Map exposure points and data passageways](#-map-exposure-points-and-data-passageways)
+
 --------------------------------------------------------------------------------
  Least privilege
 --------------------------------------------------------------------------------
@@ -57,7 +66,7 @@ Benefits:
 * Consider edge cases
 
 --------------------------------------------------------------------------------
- Defense in depth 
+ Defense in depth
 --------------------------------------------------------------------------------
 
 Layered defense slowing the advance of an attacker 
