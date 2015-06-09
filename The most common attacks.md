@@ -84,7 +84,7 @@ If HTML must be allowed (CMS)
   * Sanitize everything else
 
 --------------------------------------------------------------------------------
- Cross-site request forgery 
+ Cross-site request forgery
 --------------------------------------------------------------------------------
 
 "CSRF"
@@ -267,7 +267,7 @@ Defense
       * GET might still allow hackers to see information they shouldn't see
 
 --------------------------------------------------------------------------------
- Faked requests 
+ Faked requests
 --------------------------------------------------------------------------------
 
 = Request header information CAN be modified - "faked" or "spoofed" header
@@ -447,7 +447,7 @@ Defense
 * **Expire/remove old session files regularly**
 
 --------------------------------------------------------------------------------
- Remote system execution 
+ Remote system execution
 --------------------------------------------------------------------------------
 
 = Remotely run operating system commands on a webserver
@@ -494,7 +494,7 @@ proc_open
   * Add aditional data validations
 
 --------------------------------------------------------------------------------
- File upload abuse 
+ File upload abuse
 --------------------------------------------------------------------------------
 
 = Abuse of allowed file upload features 
@@ -518,7 +518,7 @@ Defense:
   * **Do not host uploaded files which have not been verified**
 
 --------------------------------------------------------------------------------
- Denial of service 
+ Denial of service
 --------------------------------------------------------------------------------
 
 "DoS"
