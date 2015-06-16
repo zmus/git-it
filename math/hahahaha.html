@@ -3,7 +3,7 @@
 <head>
     <style>
     /* height = line-height, padding  */
-        * { margin: 0; outline: px dashed red }
+        * { margin: 0; outline: 1px dashed red }
         html { 
             height: 100%;
             display: flex;
@@ -13,7 +13,13 @@
         body {
             font: 8vmin Helvetica;
             display: flex;
-            height: 0em;
+            align-items: center;
+            outline: 1px solid green;
+            height: 8em;
+        }
+        .wrapper {
+            display: flex;
+            height: 0;
         }
         div {
             display: inline-flex;
@@ -89,6 +95,7 @@
 </head>
 
 <body class="math">
+<div class="wrapper">
     <div class="col A">
         <div class="row">
             <div class="mi">E</div>
@@ -336,6 +343,8 @@
             </div>
         </div>
         </div>
-    </div>  
+    </div> 
+
+</div> 
 </body>
 </html>

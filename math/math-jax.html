@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     font: 10vmin "Cambria Math";
-    height: 0;
+    height: ;
   }
   mrow {
     display: flex;
@@ -32,7 +32,7 @@
     justify-content: center;
   }
   mfrac {
-    float:left;
+    display: flex;
     flex-direction: column;
   }
   [class="\\frac"] > *:first-child {
@@ -46,7 +46,14 @@
   }
   mi {
     display: inline-flex;
+    flex-direction: column;
     justify-content: center;
+  }
+  mi::before,
+  mi::after {
+    display: flex;
+    content: '';
+    outline: 1px solid green;
   }
   mo {
     display: inline-flex;
@@ -74,17 +81,35 @@
   [stretchy="true"] {
     flex: 1;
   }
-
-
+  munderover {
+    display: flex;
+    flex-direction: column;
+  }
+  .A::after {
+    content: '';
+    z-index: -999;
+    height: 1em;
+    outline: 10px solid red;
+  }
 </style>
 </head>
 <body>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>A</mi> <mi>x</mi> <mo>=</mo>
+  <mrow>
+    <munderover>
+      <mi class="A">A</mi> 
+      <mi>b</mi>
+    </munderover>
+    <mi>x</mi> 
+    <mo>=</mo>
+  </mrow>
+
   <mrow>
     <mo class="\left \{" stretchy="tre">{</mo>
     <mfrac class="\frac">
+
+
       <mrow>
         <mo>&#x2212;</mo>
         <mi>b</mi>
@@ -95,10 +120,28 @@
           <mn>4</mn><mi>a</mi><mi>c</mi>
         </msqrt>
       </mrow>
-      <mrow> <mn>2</mn><mi>a</mi> </mrow>
+      
+      <mrow> 
+        <mfrac class="\frac">
+          <mrow>
+            <mo>&#x2212;</mo>
+            <mi>b</mi>
+            <mo>&#x00B1;</mo>
+            <msqrt class="\sqrt">
+              <msubsup><mi>b</mi><mn class="_">2</mn><mi class="^">n</mi></msubsup>
+              <mo>&#x2212;</mo>
+              <mn>4</mn><mi>a</mi><mi>c</mi>
+            </msqrt>
+          </mrow>
+          <mrow> <mn>2</mn><mi>a</mi> </mrow>
+        </mfrac>
+      </mrow>
+
+  
     </mfrac>
     <mo class="\right \}" stretchy="true">}</mo>
   </mrow>
+
 </math>
 
 </body>
