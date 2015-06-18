@@ -1,0 +1,167 @@
+================================================================================
+[Working with graph](http://www.orientechnologies.com/docs/last/orientdb.wiki/Tutorial-Working-with-graphs.html)
+================================================================================
+
+Include some extra checks and balances related to a graph database.
+Such as a need for vertex to belong to a class extending V.
+
+--------------------------------------------------------------------------------
+Vertex C _ _ D
+--------------------------------------------------------------------------------
+
+CREATE VERTEX <class> | CLUSTER <cluster> 
+
+[SET <field> = <expression>[,]*]
+
+    CREATE VERTEX Person SET firstName = "Bob", lastName = "Brown"
+
+    CREATE VERTEX Person CLUSTER Italy SET firstName = "Bob", lastName = "Brown"
+
+    CREATE VERTEX Employee CONTENT { "name":  "Tim", "surname": "Wayne" }
+
+---
+
+DELETE VERTEX <class> | <rid>
+
+    DELETE VERTEX #24:865
+
+[WHERE <conditions>]
+
+    DELETE VERTEX Automobile WHERE currentModel = false
+      = where the currentModel property is false
+
+    DELETE VERTEX Person WHERE in.@Class = "Expired"
+      = all Person vertices that have "in" edges with a class of "Expired"
+
+[LIMIT <MaxRecords>]
+
+--------------------------------------------------------------------------------
+Edge C _ _ D
+--------------------------------------------------------------------------------
+
+CREATE EDGE <class> [CLUSTER <cluster>] 
+FROM <rid> | (<query>) | [<rid>]*
+TO <rid> | (<query>) | [<rid>]*
+
+    CREATE EDGE FROM #10:3 TO #11:4
+      = lightweight 
+
+    CREATE EDGE WorksAt FROM #10:3 TO #11:4
+      = lightweight of type 'WorksAt'
+
+    CREATE EDGE WorksAt CLUSTER  Teamsters FROM #10:3 TO #11:4
+      = stores it in a 'Teamsters' cluster
+
+    CREATE EDGE Underage (SELECT FROM Person WHERE age < 18) TO #11:4
+      = from all underage people to a movie #11:4
+
+[SET <field> = <expression>[,]*] | CONTENT {<JSON>}
+
+    CREATE EDGE FROM #20:1 TO #21:3 CONTENT {value: 1200}
+      = with a property value
+
+[RETRY <retry> [WAIT <pauseBetweenRetriesInMs]]
+
+---
+
+DELETE EDGE <rid> | FROM <rid> | TO <rid> | [<class>]
+
+[WHERE <conditions>]
+
+    DELETE EDGE Owns WHERE date < "2015-04"
+
+    DELETE EDGE Owns WHERE date < "2015-04" and in.boughtFor < 350
+      = incoming edge with a property .boughtFor < 350
+
+    DELETE EDGE FROM #11:1 TO #11:2 WHERE date <= "2015-04-06"
+
+    DELETE EDGE FROM #11:1 TO #11:2 WHERE @class = "comment" AND status = "SPAM"
+
+[LIMIT <MaxRecords>]
+
+--------------------------------------------------------------------------------
+Traversals
+--------------------------------------------------------------------------------
+
+* For flexible graph queries
+
+* Suitable when "depth" is uknown
+
+* Various strategies for traversal - require a course of their own
+
+---
+
+TRAVERSE * FROM #10:2
+  = finds all vertices using the base vertex #10:2 
+
+TRAVERSE * FROM #14:5 WHILE $depth <= 2
+
+SELECT FROM Person WHERE any() traverse(0,3) (firstName = "Carl")
+  = has vertex within 3 levels of depth with the given property value
+
+SELECT out('Bought').out('Bought') FROM #25:6
+  = buyer of buyer of #25:6
+  * better speed without traversal - we know the depth target is 2 ahead of time
+
+SELECT $path FROM ( TRAVERSE out FROM Make WHILE $depth <= 3 )
+  = vertices traversed in order of traversal
+
+TRAVERSE Friends FROM #10:1 WHILE $depth <= 3 STRATEGY BREADTH_FIRST
+
+SELECT FROM ( TRAVERSE Friends from #10:1 WHILE $depth <= 3 ) WHERE $depth >= 1
+  = friends of #10:1 between the depths of 1 and 3
+
+SELECT out("Owns") FROM (
+TRAVERSE out("Bought", "Sold")[buyerRating > 6 and sellerRating > 6].in("Bought", "Sold") 
+FROM #1:1 
+WHILE $depth < 3
+) 
+WHERE out("IsModel")[0] = #12:0
+
+= traverses through all transactions attached to #1:1, 
+  including buyers and sellers,
+  up to 3 levels of depth, 
+  that also has buyer and seller rating > 6
+
+--------------------------------------------------------------------------------
+Graph Functions
+--------------------------------------------------------------------------------
+
+Mix into existing SQL nicely.
+
+out
+in
+both
+outE
+inE
+bothE
+outV
+inV
+traversedElement
+traversedVertex
+traversedEdge
+shortestPath
+dijkstra
+
+SELECT in('isModel').color FROM #14:3
+  = colors of cars that are model #14:3 
+
+SELECT both('Friend', 'Brother') from Person WHERE lastName = 'Davis'
+  = vertices connected through 'Friend' or 'Brother' edges in either direction
+    to the Person vertices with the lastName = 'Davis'
+
+SELECT outV() FROM Bought WHERE purchasePrice < 1000
+  = outgoing vertices where the 'Bought' edge has the .purchasePrice < 1000
+
+SELECT FROM Poi WHERE distance(x, y, 52.20472, 0.14056) <= 30
+  = 'Poi' vertices with the distance <= 30, from the hardcoded coordinates
+
+SELECT shortestPath(#13:30, #27:600, 'BOTH')
+  = returns the series of steps that make up the shortest path between records
+
+SELECT dijkstra($current, #13:30, 'weight') FROM V
+  = the least weighted path between each vertex in V and #13:30
+
+SELECT FROM (SELECT in('IsModel') FROM #12:12) 
+WHERE avg(in('Owns').out('Sold').buyerRating) > 6
+  = cars, model #12:12, that have sellers with good ratings from other car buyers

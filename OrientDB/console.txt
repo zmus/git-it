@@ -1,0 +1,75 @@
+================================================================================
+[Console](http://www.orientechnologies.com/docs/last/orientdb.wiki/Console-Commands.html)
+================================================================================
+
+**You can use all SQL commands**
+
+create database remote:localhost/ConsoleDemo user password plocal
+  = create and connect to a dbs
+  * plocal = storage type
+
+disconnect
+  = disconnect from server or dbs
+ 
+connect + <mode>:<path> <user> <password>
+  * <mode>
+      local  ->  plocal:../
+      remote ->  remote:localhost/
+
+  * connect to a server:
+      <mode> = remote
+      <path> = localhost = ''
+      <user> = root
+
+  * connect to a dbs as 'admin' -  default user for administration
+      <mode> = remote
+      <path> = /databases/<dbsName> 
+      <user> = admin 
+
+list databases
+  * when connected to a server
+
+config
+  = see all configuration options of the dbs
+
+  + get <configName>
+    = get one configuration
+
+create class <class> extends V
+
+list classes
+
+create property <class>.<property> <type>
+
+info
+  = all dbs info
+
+  + class <class> 
+    = super class, cluster, properties
+
+browse class <class>
+  = see records 
+
+select from Person
+
+load record <@RID>
+
+
+--------------------------------------------------------------------------------
+Backups
+--------------------------------------------------------------------------------
+
+Enterprise - allows backups through the remote connection
+Community  - only over local connection
+
+
+connect plocal:../databases/ConsoleDemo admin admin
+
+backup database <path><fileName>.zip
+  = create compressed backup in a given location
+
+export database <path><fileName>.export
+
+import database <path><fileName>.export.gz
+
+e.g. <path> = /Users/<user>/Documents/

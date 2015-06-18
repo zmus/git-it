@@ -1,0 +1,64 @@
+================================================================================
+[HTTP REST API](http://orientdb.com/docs/last/orientdb.wiki/OrientDB-REST.html)
+================================================================================
+
+* C R U D
+* Inspect dbs properties
+* Execute server side functions
+* Build and manage data model
+
+GET  localhost:2480/disconnect
+
+GET  localhost:2480/listDatabases
+
+GET  localhost:2480/connect/<dbs>
+  * connect to database
+  * don't forget to set Authorization header
+
+GET  localhost:2480/database/<dbs>
+  * database data
+
+GET  localhost:2480/class/<dbs>/<class>
+  * get class
+
+POST localhost:2480/class/<dbs>/<class>
+  * create <class> class
+  * response: ID number
+
+GET  localhost:2480/cluster/<dbs>/<cluster>
+  * cluster data
+
+POST localhost:2480/command/<dbs>/<language>
+  * execute on the server command passed in the body
+
+POST localhost:2480/function/<dbs>/<function>/<parameters>
+  * if it doesn't change the dbs, you can use GET
+
+**Working with data**
+
+DELETE localhost:2480/document/<dbs>/12:10
+  * delete document #12:10
+
+GET    localhost:2480/document/<dbs>/12:10
+GET    localhost:2480/documentbyclass/<dbs>/<class>/10
+  * get document 
+
+GET    localhost:2480/query/<dbs>/<language>/<query>
+  * e.g. query/Croatia/sql/select from Food
+
+HEAD   localhost:2480/document/<dbs>/12:10
+HEAD   localhost:2480/documentbyclass/<dbs>/<class>/10
+  * check if document exists
+    * 404 Not Found
+    * 204 OK
+
+POST   localhost:2480/document/<dbs>/
+  * Body
+  ```json
+  {
+    "@class": "Person",
+    "firstname": "Joe", 
+    "lastName": "Cocker"
+  }
+  ```
+  * create document

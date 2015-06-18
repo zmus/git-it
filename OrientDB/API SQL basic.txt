@@ -1,0 +1,117 @@
+================================================================================
+[SQL API](http://www.orientechnologies.com/docs/last/orientdb.wiki/Tutorial-SQL.html)
+================================================================================
+
+Case insensitive.
+
+Orient uses superset of SQL to support graph dbs.
+
+JavaAPI is also a native method of access.
+
+--------------------------------------------------------------------------------
+Classes
+--------------------------------------------------------------------------------
+
+CREATE CLASS <className> [EXTENDS <super-class>][CLUSTER <clusterID>]
+
+    CREATE CLASS Lead EXTENDS V
+      = extend V base class 
+      * inherit qualities of a vertex
+
+    CREATE CLASS Vehicle CLUSTER 10
+      = specify default cluster
+
+    CREATE CLASS DataItem ABSTRACT
+      = create **abstract class**
+      * cannot have direct records...
+      * ...only records through inheritance by sub-classes
+      * -> provides structure for sub-classes
+
+ALTER CLASS <className> <attributeName> <attributeValue>
+
+    ALTER CLASS Person NAME Individual
+      = change name of the class
+
+    ALTER CLASS Person SUPERCLASS V
+      = add V as the SuperClass of Person
+
+    ALTER CLASS Account ADDCLUSTER Europe
+      = add cluster
+
+    ALTER CLASS  Car CLUSTERSELECTION round-robin
+      = specify storage strategy for the class
+
+DROP CLASS <className>
+    = delete class from the schema
+
+TRUNCATE CLASS <className>
+    = delete all the records - from all the clusters
+
+--------------------------------------------------------------------------------
+Clusters
+--------------------------------------------------------------------------------
+
+CREATE CLUSTER <clusterName> [POSITION <position> | append]
+
+    CREATE CLUSTER AccountUSA
+
+    CREATE CLUSTER CarsUSA POSITION 3
+
+ALTER CLUSTER <clusterName> | <clusterID> <attributeName> <attributeValue>
+
+    ALTER CLUSTER Europe NAME Italy
+
+    ALTER CLUSTER Europe COMPRESSION gzip
+
+    ALTER CLUSTER V CONFLICTSTRATEGY automerge
+      = updates the V cluster to have automerge conflict strategy
+
+DROP CLUSTER <clusterName> | <clusterId>
+
+    DROP CLUSTER CarsUSA
+
+    DROP CLUSTER 10
+
+TRUNCATE CLUSTER <clusterName>
+    = truncate all the records from the cluster
+
+--------------------------------------------------------------------------------
+Properties
+--------------------------------------------------------------------------------
+
+CREATE PROPERTY <class>.<property> <type> [<linkedType> | <linkedClass>]
+
+    CREATE PROPERTY Person.name STRING
+
+    CREATE PROPERTY Company.salesVolume FLOAT 
+
+    CREATE PROPERTY Profile.tags EMBEDDEDLIST STRING 
+      * list element of type string
+
+ALTER PROPERTY <class>.<property> <attributeName> <attributeValute>
+
+    ALTER PROPERTY Person.name MANDATORY true
+      = make Person.name mandatory
+
+    ALTER PROPERTY Contact.gender REGEXP [M|F]
+      = make Contact.gender conform to regexp
+
+    ALTER PROPERTY Company.tagline NAME slogan
+      = Company.tagline -> Company.slogan
+
+DROP PROPERTY <class>.<property>
+    = remove the property from the class
+
+
+INSERT INTO <class> (<property>) VALUES (<value1>), (<value2>)
+    = create records
+
+    INSERT INTO Person (firstName, lastName) VALUES ("Gary", "White"), ("Mick", "Jeger")
+
+    INSERT INTO Person SET firstName = "Gary", lastName="White"
+
+    INSERT INTO Person content {}
+
+
+
+

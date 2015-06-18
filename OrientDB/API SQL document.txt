@@ -1,0 +1,169 @@
+================================================================================
+CRUD
+================================================================================
+--------------------------------------------------------------------------------
+Create Records
+--------------------------------------------------------------------------------
+
+INSERT INTO [class:]<class> | [cluster:]<cluster> | [index:]<index>
+
+[(<field[,]*) VALUES (<expression>[,]*)[,]*] |
+  = for multiple records
+
+    insert into V (name, type) values ('Tim', 'artist'), ('Gary', 'fireman')
+
+    insert into cluster:9 (name) values ('Tim')
+
+[SET <field> = <expression> | <sub-command>[,]*] |
+  = for single record
+
+    insert into V set name = 'Tim', type = 'artist'
+
+    insert into Diver set name = 'Bill', buddy = (select from Diver where name = 'Max')
+
+    insert into Husband set name = 'Wayne', wife = (insert into Diver name = 'Jill')
+
+[CONTENT {<JSON>}] |
+  = for JSON objects
+
+    insert into V content {"name": "Tim", "type": "artist"}
+
+[RETURN <expression>]
+
+[FROM <query>]
+
+    insert into cluster:ClientFR from (select from Client where country = 'Canada')
+
+--------------------------------------------------------------------------------
+Queries
+--------------------------------------------------------------------------------
+
+SELECT [<Projections>] [FROM <Target> [LET <Assignment>*]]
+
+    select name, age from Account
+      = uses a projection to return 'name' and 'age' property of all records 
+        from the 'Account' class
+
+    select from [#10:3, #10:4, #10:5]
+      = selects the 3 records
+
+    select name.toUppercase(), adress.city.country.name from Profile
+      = returns all records from the 'Profile' with 
+        * 'name' converted to uppercase
+        * links between adress.city.country.name resolved inline
+
+    select count(*) from Person
+      = returns number of records in Person class
+
+    select name, eval('highwayMPG - cityMPG') AS variance FROM Model
+      = output name and difference between two properties under 'variance'
+
+    select distinct(firstName) as name from Person order by name asc
+      = all names that are distinct, ordered
+
+[WHERE <Condition> *]
+
+    select * from Person where name LIKE 'Luk%'
+    select * from Person where name.left(3) = 'Luk'
+      = all records from 'Person' class that have a 'name' starting with 'Luk'
+
+[GROUP BY <Field> *]
+
+[ORDER BY <Fields> * [ASC | DESC] *]
+
+    select from Profile order by @rid desc
+
+[SKIP <SkipRecords>]
+
+[LIMIT <MaxRecords>]
+
+[FETCHPLAN <FetchPlan>]
+
+[TIMEOUT <Timeout> [<STRATEGY>]
+
+[LOCK default | record]
+
+[PARALLEL]
+
+
+SELECT FROM Profile
+LET $city = adress.city
+WHERE $city.name like '%Saint%' and
+    ( $city.country.name = 'Italy' or $city.country.name = 'France' ) 
+
+    = select profiles that have an adress where the city contains 'Saint' 
+      and whose country that is either Italy or France
+
+--------------------------------------------------------------------------------
+Updating Records
+--------------------------------------------------------------------------------
+
+UPDATE <class> | cluster:<cluster> | <recordID>
+
+[SET | INCREMENT | ADD | REMOVE | PUT <field-name> = <field-value>[,]*] | 
+ CONTENT | MERGE <JSON>]
+
+    update Profile remove name
+      = removes 'name' from all profiles
+
+    update Account add addresses = #12:0
+      = adds a value into a collection property 'addresses' in all account rec.
+
+    update #15:332 set address = {"street": "Rose Ave.", "city": {"name": "NY"}}
+      = puts a JSON into the 'address' property with the @RID #15:332
+
+[UPSERT]
+  = update or insert if nonexistant
+
+    update Person set firstName = 'Dave' upsert where status = 'active'
+      = updates all active 'Person' records to have a firstName = 'Dave'
+      = creates a new record if such a record does not exist
+
+[RETURN <returning> [<returning-expression>]]
+     * before = before update
+     * after = after update
+
+[WHERE <conditions>]
+
+    update Profile set name = 'Dave' where name is NULL
+      = updates all profiles with the name property equal to NULL to have a 
+        name of Dave
+
+[LOCK default | record]
+
+    update Counter increment views = 1 where page='/downloads/' lock record
+      = updates the 'Counter' records from '/downloads/' page
+        * increments the 'views' property by 1
+        * locks the record
+
+[LIMIT <max-records>] [TIMEOUT <timeout>]
+
+    update Profile set job = 'Labourer' where job is NULL limit 20
+      = ...where the current job is NULL and sets a limit of 20 records
+
+--------------------------------------------------------------------------------
+Deleting Records
+--------------------------------------------------------------------------------
+
+DELETE FROM <Classs> | cluster:<cluster> | index:<index> 
+
+[LOCK <default | record>]
+
+[WHERE <Condition>*]
+
+    delete from Profile where surname.toLowerCase() = 'unknown'
+      = delete all records from the 'Profile' class, 
+        where the surname is equal to the lowercase of a given string
+
+    delete from Leads where age > 120
+
+    delete from cluster:Archive
+      = delete all records from the 'Archive' cluster
+
+    delete from #13:45 return before
+      = deletes the record #13:45 
+        and returns the record in its state prior to deletion
+
+[LIMIT <MaxRecords>]
+
+[TIMEOUT <timeout>]
