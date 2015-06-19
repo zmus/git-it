@@ -1,6 +1,8 @@
 ================================================================================
-[Working with graph](http://www.orientechnologies.com/docs/last/orientdb.wiki/Tutorial-Working-with-graphs.html)
+Working with graph
 ================================================================================
+
+http://www.orientechnologies.com/docs/last/orientdb.wiki/Tutorial-Working-with-graphs.html
 
 Include some extra checks and balances related to a graph database.
 Such as a need for vertex to belong to a class extending V.
