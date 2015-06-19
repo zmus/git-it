@@ -1,0 +1,13 @@
+ZADATAK 1/2
+A priori vrem. složenosti za:
+	a) bubble sort
+	b) quick sort (merge)
+Usporedite dobiveni rezultat s a posteriori vrem. slož. za ta dva algoritma.
+savjeti: 
+Random A[100000], 10000-100000, graf
+
+ZADATAK 3
+1/0 ranca
+kapacitet c = 7
+težine w = {1, 2, 3, 4, 5}
+P = {2, 4, 5, 1, 3}
