@@ -27,7 +27,7 @@ position make_NULL(head* L) {
 position end(head L) {  
 // arg. = vrijednost pointera na glavu 'L'
 	position q = L;   
-	while (q->next->next != NULL) { 
+	while (q->next != NULL) { 
 		q = q->next;
 	}
 	return q;

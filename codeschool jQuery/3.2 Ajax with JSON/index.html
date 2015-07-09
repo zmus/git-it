@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Ajax With Forms</title>
+</head>
+
+<body>
+  <form action="/book" method="POST">
+    <label for="location">location</label>
+    <select name="location">
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+    </select>
+
+    <label for="nights">nights</label>
+    <input name="nights" type="number" min=1 value=1>
+
+    <input type="submit" value="book">
+  </form>
+
+  <div id="tour"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
