@@ -34,7 +34,7 @@ npm install
     	  'node_modules' folder
 
   + <modulenames> --save
-	     = install modules as a dependency in the package.json
+	     = install modules as a dependency in the package.json 
 
 npm ls
 	= show dependencies for current version and are they installed
@@ -60,6 +60,8 @@ npm rm <modulename> --save
   "test": "node test.js"
 }
 	= runs 'test.js'
+
+?  run with $npm test ?
 
 --------------------------------------------------------------------------------
                                  Polishing
@@ -101,6 +103,9 @@ npm version [ <version> | major | minor | patch | prerelease |
 
 npm view <pkg> version
 	= view package's published version
+
+npm install <pkg>@4.9
+  = install latest version for the 4.9 branch
 
 --------------------------------------------------------------------------------
                                  Dist Tag

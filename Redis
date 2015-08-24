@@ -1,0 +1,15 @@
+Redis - "Remote Dictionary Service"
+
+-  small-ish quantity of data that doesn't need the relational structure that Postgres offers, and requires fast access
+
+-  session data in a dynamic web interface
+
+- a cache for some Postgres data which is going to be accessed very often (ie: load it when a user logs in)
+
+- counters
+
+Postgres
+
+- complex lookups
+
+- transactions

@@ -1,4 +1,7 @@
 /*----------------------------------------------------------------------------- 
+	npm init
+	npm install express@4 --save
+
 	Express:
 		- web application framework for Node
 		- minimal and flexible
@@ -27,22 +30,33 @@ var app = express();
 //  that create routes.
 
 app.get('/', function (req, res) {
-	// using Express API
 	res.send('Hello world'); 
-	// same thing, using Node API 	
-		// response.write('Hello world');
-		// response.end();
 });
 
-/* 
-	send():
-		- converts: OBJECTS & ARRAYS -> JSON
-		            STRINGS -> HTML
-		- sets proper response headers automatically (200, content-type)
+/*------------------------------------------------------------------------------ 
+response object methods
 
-	json():
+	.send()
+		- Express API. Same as Node's:
+				response.write('Hello world');
+		    response.end();
+
+		- sets proper response headers automatically (200, Content-Type)
+
+		- converts: OBJECTS & ARRAYS -> JSON  =  (200, application/json)
+		            STRINGS -> HTML           =  (200, text/html)
+
+	.json()
 		- for objects and arrays, same response as send() 
-*/ 
+
+	.redirect(code, 'adress')
+------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------ 
+	.on('event', callback)
+		= binds event handler to an object, which emits them
+
+------------------------------------------------------------------------------*/
+
 var shapes = ['Circle', 'Square', 'Triangle'];
 
 app.get('/array_send', function (req, res) {

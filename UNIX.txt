@@ -1,0 +1,2 @@
+less <filename>
+  = view contents of a txt file
