@@ -6,10 +6,18 @@ Redis - "Remote Dictionary Service"
 
 - a cache for some Postgres data which is going to be accessed very often (ie: load it when a user logs in)
 
-- counters
+- Counting things (INCRBY operation)
 
 Postgres
 
 - complex lookups
 
 - transactions
+
+SET server:name "fido"
+
+GET server:name => "fido"
+
+
+Apache and nginx directly route the static files to the network card without loading it to the memory. 
+ Node.js loads the entire file into memory before sending it

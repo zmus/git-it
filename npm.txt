@@ -38,6 +38,7 @@ npm install
 
 npm ls
 	= show dependencies for current version and are they installed
+  * options: -g --depth=0
 	* errors:
 			'missing' = some dependencies are not installed
 				        * npm install
