@@ -10,6 +10,8 @@ $(function () {
         var x0 = e.pageX;
         var y0 = e.pageY;
 
+        console.log(x0 + "  " + y0);
+
         cartesian.on('mousemove', function (e) {
 
             var x = e.pageX;
@@ -25,7 +27,7 @@ $(function () {
 
     function moveOrigin(x, x0, y, y0) {
         var newHeight = height + (y - y0);
-        console.log("%d %d", height, newHeight);
+       // console.log("%d %d", height, newHeight);
         $('.cartesian .up').css('flex', newHeight + 'px');
     }
 })

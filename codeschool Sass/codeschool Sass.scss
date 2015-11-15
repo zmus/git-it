@@ -201,7 +201,7 @@ $side: top;
     Variable Arguments
 ----------------------------------------------------------------------------- */
 
-// For paassing comma separated values...
+// For passing comma separated values...
 
 @mixin transition($val...) {  // adding ... creates 'variable argument'
   transition: $val;

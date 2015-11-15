@@ -111,7 +111,7 @@ balanced
   * calculates sizes every 5s
 
 local
-  * returns cluster that is the master on current node...
+  * returns cluster that is master on the current node...
   * ...when running in distributed mode
 
 ================================================================================

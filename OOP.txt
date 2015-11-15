@@ -1,0 +1,164 @@
+
+class = data type definition
+  * field 
+    = data member
+    * created for each object 
+  * method 
+    = function member
+    * only one copy in memory
+
+object / instance 
+  = piece of data
+  * has it's own copy of the fields, but not it's own copy of the methods
+
+Object is instance of a class.
+
+--------------------------------------------------------------------------------
+Encapsulation
+--------------------------------------------------------------------------------
+
+= r/w on fields of an object should only be made by methods of that instance's 
+  class
+
+Methods 
+  * act as "interface" to object's fields
+  * encapsulate all of the knowledge of what is meant to be done with the data 
+    that makes up that datatype
+
+Members of a class can be
+  * public
+    = can be accessed from the outside 
+    * methods
+  * private
+    = accessible only by methods of the same class
+    * fields 
+    * methods used by the class itself
+
+Static languages prevent r/w on private members outside their class, 
+dynamic typically do not. 
+
+--------------------------------------------------------------------------------
+Inheritance
+--------------------------------------------------------------------------------
+
+= a type may include all members from another type
+
+supertype | ancestor > class > subtype | descendant
+
+parent = direct ancestor
+child  = direct descendant
+
+Think before using it:
+
+  is-a   mammal > cat , car > Toyota  OK
+  vs.
+  has-a  car > wheel                  WRONG
+
+Types of inheritance:
+  * multiple
+    = can inherit from multiple classes
+    * flexible
+    * confusing - from which class to inherit the same property?
+  * single
+    * Java, C#
+  * circular
+    = class ends up inheriting from itself
+    * not allowed in any language
+
+--------------------------------------------------------------------------------
+Overriding and Polymorphism
+-------------------------------------------------------------------------------
+
+= overriding an inherited method:
+
+Object > Mammal.canFly() > Bat.canFly()
+
+= method calls are polymorphic - they depend upon the type of an object:
+
+mammal_x.canFly() !== bat_x.canFly()
+
+
+Methods live in the namespace of their class  <=  object.method(args)
+
+  1) Object's type tells the language ~in which class~ to look for that method
+  2) ~Specifies the instance~ of a class on which the method is invoked
+
+In JS the instance gets passed to 'this'.
+
+
+var app = {};    // global namespace
+app.event = {};  // sub namespace
+
+--------------------------------------------------------------------------------
+Class member
+--------------------------------------------------------------------------------
+
+= member of class itself, not its instances
+
+class.field
+  = global var that happens to live in the namespace of class
+class.method(args)
+  = procedural function that -//-
+
+In Java   
+  * static.field & static.method()
+  * enables plain old functions and vars 
+    -> because all code must live in classes
+
+--------------------------------------------------------------------------------
+Constructor
+--------------------------------------------------------------------------------
+
+= method which is run when we instantiate a class
+
+class Cat {
+  constructor(age) {
+    this.age = age;
+  }
+}
+
+var Tom = new Cat(7); => Tom.constructor(7); 
+
+--------------------------------------------------------------------------------
+Interface
+--------------------------------------------------------------------------------
+
+= a set of methods, shared by multiple unrelated classes
+
+Cat.move(), Car.move(), Bat.move()
+
+Dynamic lang. 
+  1) Invoke any method on an object 
+  2) At runtime, throw an exception if method does not exist
+
+Static lang.
+  1) Define interface 
+  2) Specify which classes implement the interface
+  3) The compiler assures that an object has such a method
+  * Prevents runtime errors
+  * More hustle
+
+--------------------------------------------------------------------------------
+Abstract class
+--------------------------------------------------------------------------------
+
+= cannot be instantiated
+* serves as the ancestor for other classes 
+
+Ex. if we need instances of Dog and Cat, but not Mammal.
+
+exist ?  Java, C#  :  Python, ES2015 
+
+--------------------------------------------------------------------------------
+Prototypical inheritance
+--------------------------------------------------------------------------------
+
+= OOP without classes - producing child instances from parent instances (objects)
+* JS
+
+--------------------------------------------------------------------------------
+Design patterns
+--------------------------------------------------------------------------------
+
+Less important in dynamic languages, but good to know terminology:
+flywheel, observer, singleton...

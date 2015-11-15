@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Math 2015-09-17 - added suppport for double nesting</title>
+    <style>
+      * { outline: 1px dashed black }
+      html, 
+      body { 
+        height: 100%; 
+        font: 2.5rem Helvetica; 
+      } 
+      ul {
+        display: inline-flex; 
+        list-style: none; 
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        outline: px solid yellow;
+      }
+      li { 
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        outline: px solid red;
+      }
+      .mfrac {
+        font-size: 0.8em;
+        padding: 0 0.2em;
+      }
+      ul:empty {
+        height: 0.2rem;
+        background: black;
+      }
+      l:empty {
+        width: 0.2rem;
+        background: black;
+        align-self: stretch;
+      }
+      .msqrt {
+        margin-top: 0.1rem;
+      }
+      
+      .msqrt > ul > li:nth-child(1) { outline: 3px solid red; }
+      .msqrt > ul > li:nth-child(1) > ul > li { outline: 3px solid green;
+        font-size: 0.6em;
+      }
+      .msqrt > ul > li:nth-child(1) > ul > li svg {
+        display: flex;
+        flex: 1 ;
+      }
+      .msqrt > ul > li:nth-child(2) > ul > li svg {
+        display: flex;
+        flex: 1;
+        outline: 3px solid red;
+      }
+      .msqrt > ul  > li:nth-child(3) {
+        border-top: 0.1rem solid black;
+      }
+      
+      .msubsup {
+        flex-direction: column-reverse;
+        font-size: 0.6em;
+      }
+
+    </style>
+    <script src="2015-09-17-math.js"></script>
+  </head>
+
+  <body style="display: flex">
+
+
+    <ul class="math">
+<li><ul>
+      <li></li>
+      <li>E</li>
+      <li>=</li>
+      <li></li>
+      <li class="mfrac">
+        <ul>
+          1     
+        </ul> 
+        <ul></ul>
+        <ul>
+        <li></li>
+          <li><ul><li><ul><li><ul><li>2</li></ul></li></ul></li></ul></li>
+          <li>
+          <ul>
+          <li class="mfrac">
+            <ul> 
+            <li></li>            
+              <li class="mfrac">
+                <ul></ul>
+                <ul>
+                  <li>3</li>
+                </ul>
+                <ul></ul>
+                <ul>
+                  <li>4</li>
+                </ul>
+                <ul></ul>            
+              </li>
+            </ul>
+            <ul></ul>
+            <ul>
+              <li>5</li>
+            </ul> 
+          </li>
+          </ul>           
+          </li>       
+        </ul>                 
+      </li>
+</ul></li>
+    </ul>
+
+
+
+    <ul class="math">
+      <li>
+        <ul>
+          <li>
+            <ul>
+              <li class="mi">E</li>
+              <li class="mo">=</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="mfrac">
+        <ul>
+          <li class="mi">m</li>
+          <li class="mi">v</li>
+        </ul>
+        <ul></ul>
+        <ul>
+          <li class="mn">2</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="math">
+      <li><ul>
+      <li class="mi">E</li>
+      <li class="mo">=</li>
+      </ul></li>
+      <li><ul>
+        <li class="mfrac">
+          <ul>
+            <li class="mi">m</li>
+          
+            <li class="mi">v</li>
+            <li class="msubsup">
+              <ul> 
+                <li class="mn">2</li> 
+              </ul> 
+              <ul></ul>
+              <ul>
+              <li class="mfrac">
+                <ul>
+                  <li class="mi">m</li>
+                  <li class="mi">v</li>
+                  <li class="msubsup">
+                    <ul> 
+                      <li class="mn">2</li> 
+                    </ul> 
+                    <ul></ul>
+                    <ul>
+                      <li class="mn">3</li> 
+                    </ul>
+                  </li>
+                </ul>          
+                <ul></ul>
+                <ul>
+                  <li class="mn">2</li>
+                </ul>
+              </li>
+              </ul>
+            </li>
+          </ul>          
+          <ul></ul>
+          <ul>
+            <li class="mn">2</li>
+          </ul>
+        </li>
+      </ul></li>
+    </ul>
+
+
+    <ul class="math">
+      <li class="mi">E</li>
+      <li class="mo">=</li>
+      <li class="msqrt" data="3">
+        <ul>
+          <li class="mfrac">
+            <ul>
+              <li class="mi">m</li>
+              <li class="mi">v</li>
+              <li class="msubsup">
+                <ul> 
+                  
+                </ul> 
+                <ul></ul>  
+                <ul> <li class="mfrac">
+        <ul>
+          <li class="mi">m</li>
+          <li class="mi">v</li>
+          <li class="msubsup">
+            <ul> 
+              <li class="mn">2</li> 
+            </ul> 
+            <ul></ul>
+            <ul>
+              <li class="mn">3</li> 
+            </ul>
+          </li>
+        </ul>          
+        <ul></ul>
+        <ul>
+          <li class="mn">2</li>
+        </ul>
+      </li>
+                </ul>
+              </li>
+            </ul>          
+            <ul></ul>
+            <ul>
+              <li class="mn">2</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </body>
+
+</html>

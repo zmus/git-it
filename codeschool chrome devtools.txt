@@ -1,4 +1,4 @@
-In Elements we can change DOM, in Resources only CSS and JS (not HTML).
+hIn Elements we can change DOM, in Resources only CSS and JS (not HTML).
 
 
 console.assert() -> displays an error string (its second parameter) if its first 
@@ -74,17 +74,17 @@ CSS (rendering) before JS (behaviour)
 <script src="" async></script>
   - async = executed while parsing page
   - defer = executed when the page has finished parsing 
-          - kao da smo 'default' stavili na dno
-  - default = fetched and executed immediately (parsing čeka)
+          - same as 'default' at the bottom of the page
+  - default = fetched and executed immediately (parsing is paused)
 
 /* ============================================================================= 
     Memory leaks
 ============================================================================= */
 
-1) Networking tab -> memory : promatramo spikeove
+1) Networking tab -> memory : look for spikes
 
 2) Profiles -> Take heap snapshot -> interact with page -> Take 2nd snapshot
-   -> compare ( tražimo npr. 'detached DOM nodes' )
+   -> compare ( ex. look for 'detached DOM nodes' )
 
 
 developer.chrome.com/devtools/docs/javascript-memory-profiling
